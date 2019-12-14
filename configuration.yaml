@@ -97,7 +97,7 @@ august:
 
 vacuum:
   - platform: xiaomi_miio
-    host: 192.168.1.18
+    host: 192.168.2.104
     token: !secret roborock_token
 
 switch:
