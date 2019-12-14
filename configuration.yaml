@@ -203,7 +203,7 @@ sensor:
         arg: eno1
       - type: last_boot
   - platform: rest
-    resource: http://iot.rockrobo.thepromisedlan.club/api/map/latest
+    resource: http://iot-rockrobo.thepromisedlan.club/api/map/latest
     name: valetudo_map
     json_attributes:
       - image
