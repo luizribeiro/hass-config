@@ -216,16 +216,40 @@ sensor:
     name: snmp_wan_in
     host: 'router.thepromisedlan.club'
     baseoid: 1.3.6.1.2.1.31.1.1.1.6.2
+    value_template: '{{ value | int }}'
     community: 'public'
     version: '2c'
-    scan_interval: 60
+    scan_interval: 10
   - platform: snmp
     name: snmp_wan_out
     host: 'router.thepromisedlan.club'
     baseoid: 1.3.6.1.2.1.31.1.1.1.10.2
+    value_template: '{{ value | int }}'
     community: 'public'
     version: '2c'
     scan_interval: 10
+  - platform: statistics
+    name: 'WAN in Stats'
+    entity_id: sensor.wan_in
+    sampling_size: 4
+    max_age:
+      hours: 24
+  - platform: statistics
+    name: 'WAN out Stats'
+    entity_id: sensor.wan_out
+    sampling_size: 4
+    max_age:
+      hours: 24
+  - platform: template
+    sensors:
+      wan_in_mbps:
+        value_template: "{{ (state_attr('sensor.wan_in_stats_mean','change_rate')|float*8*(state_attr('sensor.wan_in_stats_mean', 'sampling_size')-1)/1000000)|round(2) }}"
+        unit_of_measurement: 'MBps'
+        entity_id: sensor.wan_in_stats_mean
+      wan_out_mbps:
+        value_template: "{{ (state_attr('sensor.wan_out_stats_mean','change_rate')|float*8*(state_attr('sensor.wan_out_stats_mean', 'sampling_size')-1)/1000000)|round(2) }}"
+        unit_of_measurement: 'MBps'
+        entity_id: sensor.wan_out_stats_mean
 
 binary_sensor:
   - platform: ping
