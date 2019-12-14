@@ -50,6 +50,8 @@ tplink:
   switch:
     - host: 'iot-avocado'
     - host: 'iot-bacon'
+    - host: 'iot-pizza'
+    - host: 'iot-popcorn'
 
 homeassistant: 
   auth_providers:
