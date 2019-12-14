@@ -48,8 +48,8 @@ tuya:
 tplink:
   discovery: false
   switch:
-    - host: 192.168.2.101
-    - host: 192.168.2.102
+    - host: 'iot-avocado.thepromisedlan.club'
+    - host: 'iot-bacon.thepromisedlan.club'
 
 homeassistant: 
   auth_providers:
@@ -97,7 +97,7 @@ august:
 
 vacuum:
   - platform: xiaomi_miio
-    host: 192.168.2.104
+    host: 'iot-rockrobo.thepromisedlan.club'
     token: !secret roborock_token
 
 switch:
@@ -136,7 +136,7 @@ switch:
             entity_id: media_player.bedroom_tv
   - platform: broadlink
     type: rm2_pro_plus
-    host: 192.168.2.249
+    host: 'iot-rmpro.thepromisedlan.club'
     mac: !secret broadlink_mac
     switches:
       zvox_volume_up:
@@ -160,7 +160,7 @@ switch:
 
 media_player:
   - platform: webostv
-    host: 192.168.1.17
+    host: 'living-room-tv.thepromisedlan.club'
     filename: webostv.conf
     timeout: 60
     turn_on_action:
@@ -203,7 +203,7 @@ sensor:
         arg: eno1
       - type: last_boot
   - platform: rest
-    resource: http://192.168.2.104/api/map/latest
+    resource: http://iot.rockrobo.thepromisedlan.club/api/map/latest
     name: valetudo_map
     json_attributes:
       - image
@@ -214,14 +214,14 @@ sensor:
     scan_interval: 60
   - platform: snmp
     name: snmp_wan_in
-    host: 192.168.1.1
+    host: 'router.thepromisedlan.club'
     baseoid: 1.3.6.1.2.1.31.1.1.1.6.2
     community: 'public'
     version: '2c'
     scan_interval: 60
   - platform: snmp
     name: snmp_wan_out
-    host: 192.168.1.1
+    host: 'router.thepromisedlan.club'
     baseoid: 1.3.6.1.2.1.31.1.1.1.10.2
     community: 'public'
     version: '2c'
@@ -230,7 +230,7 @@ sensor:
 binary_sensor:
   - platform: ping
     name: living_room_tv_status
-    host: 192.168.1.17
+    host: 'living-room-tv.thepromisedlan.club'
     scan_interval: 1
     count: 1
 
