@@ -48,6 +48,13 @@ tuya:
 tplink:
 
 homeassistant: 
+  auth_providers:
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.1.0/24
+      trusted_users:
+        192.168.1.0/24:
+          - 568f9a82c34e4bbcb3275bc6ee3e3a60
   customize:
     # hide tuya switches since we are using them as lights
     switch.002008635ccf7f50842c:
