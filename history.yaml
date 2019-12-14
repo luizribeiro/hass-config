@@ -1,0 +1,21 @@
+entities:
+  # lock
+  - lock.front_door
+  - binary_sensor.front_door_open
+  # thermostat
+  - binary_sensor.home_away
+  - sensor.entryway_thermostat_hvac_state
+  - binary_sensor.entryway_thermostat_fan
+  # living room
+  - light.living_room
+  - media_player.playstation_4
+  - media_player.lg_webos_smart_tv
+  - vacuum.xiaomi_vacuum_cleaner
+  # bedroom
+  - light.bedroom
+  - media_player.bedroom_tv
+  # charts
+  - sensor.entryway_thermostat_temperature
+  - sensor.entryway_thermostat_humidity
+  - sensor.outside_temperature
+  - sensor.outside_humidity

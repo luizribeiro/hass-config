@@ -1,0 +1,226 @@
+default_config:
+
+http:
+  server_host: 127.0.0.1
+  base_url: https://home.thepromisedlan.club/
+  use_x_forwarded_for: true
+  trusted_proxies: 127.0.0.1
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+api:
+
+ios:
+
+history:
+  use_include_order: true
+  include: !include history.yaml
+
+logbook:
+  include: !include history.yaml
+
+recorder:
+  exclude:
+    entities:
+      - sensor.valetudo_map
+
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+wake_on_lan:
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: 1
+  platform: jinvoo_smart
+
+tplink:
+
+homeassistant: 
+  customize:
+    # hide tuya switches since we are using them as lights
+    switch.002008635ccf7f50842c:
+      hidden: true
+    switch.012002845ccf7f596568:
+      hidden: true
+    # Rename 
+    sensor.network_throughput_in_eno1:
+      friendly_name: "Ingress (eno1)"
+    sensor.network_throughput_out_eno1:
+      friendly_name: "Egress (eno1)"
+
+light:
+  - platform: switch
+    name: "Christmas Tree"
+    entity_id: switch.bacon
+  - platform: switch
+    name: "Corner Lamp"
+    entity_id: switch.jinvoo_burrito
+  - platform: switch
+    name: "TV Rack Lamp"
+    entity_id: switch.avocado
+  - platform: group
+    name: Living Room
+    entities:
+      - light.christmas_tree
+      - light.corner_lamp
+      - light.tv_rack_lamp
+
+august:
+  login_method: email
+  username: !secret august_username
+  password: !secret august_password
+
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.1.18
+    token: !secret roborock_token
+
+switch:
+  - platform: template
+    switches:
+      living_room_tv:
+        friendly_name: 'Living Room TV'
+        value_template: "{{ not is_state('binary_sensor.living_room_tv_status', 'off') }}"
+        turn_on:
+          service: switch.turn_on
+          entity_id: switch.ir_living_room_tv
+        turn_off:
+          service: switch.turn_off
+          entity_id: switch.ir_living_room_tv
+      playstation_4:
+        friendly_name: 'PlayStation 4'
+        value_template: "{{ not is_state('media_player.playstation_4', 'standby') }}"
+        turn_on:
+          service: media_player.turn_on
+          data:
+            entity_id: media_player.playstation_4
+        turn_off:
+          service: media_player.turn_off
+          data:
+            entity_id: media_player.playstation_4
+      bedroom_tv:
+        friendly_name: 'Bedroom TV'
+        value_template: "{{ not is_state('media_player.bedroom_tv', 'off') }}"
+        turn_on:
+          service: media_player.turn_on
+          data:
+            entity_id: media_player.bedroom_tv
+        turn_off:
+          service: media_player.turn_off
+          data:
+            entity_id: media_player.bedroom_tv
+  - platform: broadlink
+    type: rm2_pro_plus
+    host: 192.168.1.249
+    mac: !secret broadlink_mac
+    switches:
+      zvox_volume_up:
+        friendly_name: "ZVOX Volume Up"
+        command_off: "JgBIAAABKJQTExITEhMSFBEUEhMSExIUEjcSFBM2EhQSNxI4EjgSNxIUEjcSOBIUETgSFBEUEhMSOBITEhMSOBITEjgSOBI3EgANBQ=="
+      zvox_volume_down:
+        friendly_name: "ZVOX Volume Down"
+        command_off: "JgBIAAABKJQTEhIUExISExIUExITEhMSEzcSExM3ExISOBQ2EzYTNxIUEjcUEhITExMSEhMTEhMTNxITEzcSNxM3FDYTNhM3EgANBQ===="
+      zvox_mute:
+        friendly_name: "ZVOX Mute"
+        command_off: "JgBQAAABJpMSExISExISExMRFBESExMRFDYTEhM3EhITNxM2EjcUNhM3EhMSEhM3EzYSExMRFBETEhM3EjcTEhITEzYSNxQ2EwAFZgABJ0kSAA0FAAAAAAAAAAA="
+      zvox_power:
+        friendly_name: "ZVOX Power"
+        command_on: "JgBQAAABKJMSEhISEhISEhISEhISEhISEjcSEhI3EhISNxI3EjcSNxI3EjcSEhI3EhISNxI3EjcSEhISEjcSEhI3EhISEhISEgAFZAABKEoSAAxWDQUAAAAAAAA="
+        command_off: "JgBQAAABKJMSEhISEhISEhISEhISEhISEjcSEhI3EhISNxI3EjcSNxI3EjcSEhI3EjcSEhISEhISEhISEjcSEhISEjcSNxI3EgAFZAABKEoSAAxWDQUAAAAAAAA="
+      ir_living_room_tv:
+        friendly_name: "Living Room TV"
+        command_on: 'JgBYAAABIJISExETETcSEhISEhQQFBETETcROBESEjcRNhM1EjcTNRMTERISNxEUERMSExE2EjYSNhM2EhIROBE3ETcREhITEgAFGwABH0oSAAwzAAEfShEADQU='
+        command_off: 'JgBYAAABKpIVEBUQFjQVEBYQFRAVEBYPFjQVNRUQFjQVNRQ1FTUVNRUQFRAWEBU0FhAVEBUQFRAWNBU1FTQVERU0FTUWNBU1FQAFMgABK0cVAAxOAAErRxUADQU='
+
+
+media_player:
+  - platform: webostv
+    host: 192.168.1.17
+    filename: webostv.conf
+    timeout: 60
+    turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: !secret webostv_mac
+    customize:
+      sources:
+        - Spotify
+        - Netflix
+        - Hulu
+        - PlayStation 4
+        - Nintendo Switch
+        - YouTube
+        - Optimum
+
+sensor:
+  - platform: template
+    sensors:
+      outside_temperature:
+        friendly_name: "Outside Temperature"
+        unit_of_measurement: '°C'
+        value_template: "{{ state_attr('weather.home', 'temperature') }}"
+  - platform: template
+    sensors:
+      outside_humidity:
+        friendly_name: "Outside Humidity"
+        unit_of_measurement: '%'
+        value_template: "{{ state_attr('weather.home', 'humidity') }}"
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: memory_use_percent
+      - type: swap_use_percent
+      - type: disk_use_percent
+        arg: /
+      - type: throughput_network_in
+        arg: eno1
+      - type: throughput_network_out
+        arg: eno1
+      - type: last_boot
+  - platform: rest
+    resource: http://192.168.1.18/api/map/latest
+    name: valetudo_map
+    json_attributes:
+      - image
+      - path
+      - charger
+      - robot
+    value_template: 'OK'
+    scan_interval: 60
+  - platform: snmp
+    name: snmp_wan_in
+    host: 192.168.1.1
+    baseoid: 1.3.6.1.2.1.31.1.1.1.6.2
+    community: 'public'
+    version: '2c'
+    scan_interval: 60
+  - platform: snmp
+    name: snmp_wan_out
+    host: 192.168.1.1
+    baseoid: 1.3.6.1.2.1.31.1.1.1.10.2
+    community: 'public'
+    version: '2c'
+    scan_interval: 10
+
+binary_sensor:
+  - platform: ping
+    name: living_room_tv_status
+    host: 192.168.1.17
+    scan_interval: 1
+    count: 1
+
+pi_hole:
+
+glances:

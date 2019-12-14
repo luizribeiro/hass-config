@@ -1,0 +1,9 @@
+living_room_devices:
+  name: Living Room Devices
+  entities:
+    - switch.living_room_tv
+    - switch.playstation_4
+bedroom_devices:
+  name: Bedroom Devices
+  entities:
+    - switch.bedroom_tv
