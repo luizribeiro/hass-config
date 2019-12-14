@@ -203,7 +203,7 @@ sensor:
         arg: eno1
       - type: last_boot
   - platform: rest
-    resource: http://192.168.1.18/api/map/latest
+    resource: http://192.168.2.104/api/map/latest
     name: valetudo_map
     json_attributes:
       - image
