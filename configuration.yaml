@@ -53,6 +53,7 @@ homeassistant:
     - type: trusted_networks
       trusted_networks:
         - 192.168.1.0/24
+      allow_bypass_login: true
       trusted_users:
         192.168.1.0/24:
           - 568f9a82c34e4bbcb3275bc6ee3e3a60
