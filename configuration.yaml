@@ -46,6 +46,10 @@ tuya:
   platform: jinvoo_smart
 
 tplink:
+  discovery: false
+  switch:
+    - host: 192.168.2.101
+    - host: 192.168.2.102
 
 homeassistant: 
   auth_providers:
