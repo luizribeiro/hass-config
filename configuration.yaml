@@ -136,7 +136,7 @@ switch:
             entity_id: media_player.bedroom_tv
   - platform: broadlink
     type: rm2_pro_plus
-    host: 192.168.1.249
+    host: 192.168.2.249
     mac: !secret broadlink_mac
     switches:
       zvox_volume_up:
