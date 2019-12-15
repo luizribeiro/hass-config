@@ -16,6 +16,7 @@ entities:
   - media_player.bedroom_tv
   # charts
   - sensor.entryway_thermostat_temperature
+  - sensor.entryway_thermostat_target
   - sensor.entryway_thermostat_humidity
   - sensor.outside_temperature
   - sensor.outside_humidity
