@@ -143,6 +143,15 @@ switch:
           service: media_player.turn_off
           data:
             entity_id: media_player.playstation_4
+      zvox:
+        friendly_name: 'ZVOX'
+        value_template: "{{ not is_state('binary_sensor.living_room_tv_status', 'off') }}"
+        turn_on:
+          service: switch.turn_on
+          entity_id: switch.zvox_power
+        turn_off:
+          service: switch.turn_off
+          entity_id: switch.zvox_power
       bedroom_tv:
         friendly_name: 'Bedroom TV'
         value_template: "{{ not is_state('media_player.bedroom_tv', 'off') }}"
