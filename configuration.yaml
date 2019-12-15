@@ -35,6 +35,26 @@ scene: !include scenes.yaml
 
 wake_on_lan:
 
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  service_account: !include service-account.json
+  report_state: true
+  expose_by_default: false
+  entity_config:
+    light.christmas_tree:
+      expose: true
+      room: "Living Room"
+    light.corner_lamp:
+      expose: true
+      room: "Living Room"
+    light.tv_rack_lamp:
+      expose: true
+      room: "Living Room"
+    vacuum.xiaomi_vacuum_cleaner:
+      expose: true
+      name: "Alfred"
+      room: "Living Room"
+
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
