@@ -70,6 +70,7 @@ tplink:
   switch:
     - host: 'iot-avocado'
     - host: 'iot-bacon'
+    - host: 'iot-popcorn'
 
 homeassistant: 
   auth_providers:
@@ -99,7 +100,7 @@ light:
     entity_id: switch.bacon
   - platform: switch
     name: "Corner Lamp"
-    entity_id: switch.jinvoo_burrito
+    entity_id: switch.popcorn
   - platform: switch
     name: "TV Rack Lamp"
     entity_id: switch.avocado
