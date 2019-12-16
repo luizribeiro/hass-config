@@ -3,6 +3,7 @@ python:
   - "3.7"
 before_install:
   - mv example-secrets.yaml secrets.yaml
+  - mv example-service-account.json service-account.json
   - sudo apt-get install -y libudev-dev
 install:
   - pip3 install homeassistant
