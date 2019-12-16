@@ -7,5 +7,6 @@ before_install:
   - sudo apt-get install -y libudev-dev
 install:
   - pip3 install homeassistant
+  - pip3 install python-dateutil
 script:
   - hass -c . --script check_config
