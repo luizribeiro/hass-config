@@ -193,6 +193,7 @@ media_player:
         mac: !secret webostv_mac
     customize:
       sources:
+        - Chromecast
         - Spotify
         - Netflix
         - Hulu
