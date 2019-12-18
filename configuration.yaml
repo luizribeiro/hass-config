@@ -276,6 +276,17 @@ sensor:
         value_template: "{{ (state_attr('sensor.wan_out_stats_mean','change_rate')|float*8*(state_attr('sensor.wan_out_stats_mean', 'sampling_size')-1)/1000000)|round(2) }}"
         unit_of_measurement: 'MBps'
         entity_id: sensor.wan_out_stats_mean
+  - platform: miflora
+    mac: !secret miflora_bonsai_mac
+    name: "Bonsai"
+    force_update: false
+    scan_interval: 1800
+    monitored_conditions:
+      - moisture
+      - light
+      - temperature
+      - conductivity
+      - battery
 
 binary_sensor:
   - platform: ping
