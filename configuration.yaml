@@ -136,6 +136,7 @@ switch:
           entity_id: switch.ir_living_room_tv
       playstation_4:
         friendly_name: 'PlayStation 4'
+        availability_template: "{{ not is_state('media_player.playstation_4', 'unknown') }}"
         value_template: "{{ not is_state('media_player.playstation_4', 'standby') }}"
         icon_template: "mdi:playstation"
         turn_on:
