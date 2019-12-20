@@ -251,27 +251,27 @@ sensor:
   - platform: mqtt
     name: "NUC CPU0 Frequency"
     state_topic: "collectd/nuc/cpufreq-0/cpufreq"
-    unit_of_measurement: "GHz"
+    unit_of_measurement: "MHz"
     icon: "mdi:speedometer"
-    value_template: "{{ (value.split(':')[1] | float) / 1000000000.0 }}"
+    value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000.0 }}"
   - platform: mqtt
     name: "NUC CPU1 Frequency"
     state_topic: "collectd/nuc/cpufreq-1/cpufreq"
-    unit_of_measurement: "GHz"
+    unit_of_measurement: "MHz"
     icon: "mdi:speedometer"
-    value_template: "{{ (value.split(':')[1] | float) / 1000000000.0 }}"
+    value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000.0 }}"
   - platform: mqtt
     name: "NUC CPU2 Frequency"
     state_topic: "collectd/nuc/cpufreq-2/cpufreq"
-    unit_of_measurement: "GHz"
+    unit_of_measurement: "MHz"
     icon: "mdi:speedometer"
-    value_template: "{{ (value.split(':')[1] | float) / 1000000000.0 }}"
+    value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000.0 }}"
   - platform: mqtt
     name: "NUC CPU3 Frequency"
     state_topic: "collectd/nuc/cpufreq-3/cpufreq"
-    unit_of_measurement: "GHz"
+    unit_of_measurement: "MHz"
     icon: "mdi:speedometer"
-    value_template: "{{ (value.split(':')[1] | float) / 1000000000.0 }}"
+    value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000.0 }}"
   - platform: miflora
     mac: !secret miflora_bonsai_mac
     name: "Bonsai"
