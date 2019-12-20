@@ -14,6 +14,13 @@
 
 # collectd sensors through MQTT
 - platform: mqtt
+  name: "NUC CPU Usage"
+  state_topic: "collectd/nuc/cpu/percent-idle"
+  unit_of_measurement: "%"
+  icon: "mdi:memory"
+  value_template: "{{ 100.0 - (value.split(':')[1][:-1] | float) }}"
+
+- platform: mqtt
   name: "NUC CPU0 Frequency"
   state_topic: "collectd/nuc/cpufreq-0/cpufreq"
   unit_of_measurement: "MHz"
@@ -37,3 +44,16 @@
   unit_of_measurement: "MHz"
   icon: "mdi:speedometer"
   value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000.0 }}"
+
+- platform: mqtt
+  name: "NUC Disk Free"
+  state_topic: "collectd/nuc/df-root/df_complex-free"
+  unit_of_measurement: "GB"
+  icon: "mdi:harddisk"
+  value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000000.0 }}"
+- platform: mqtt
+  name: "NUC Disk Used"
+  state_topic: "collectd/nuc/df-root/df_complex-used"
+  unit_of_measurement: "GB"
+  icon: "mdi:harddisk"
+  value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000000.0 }}"
