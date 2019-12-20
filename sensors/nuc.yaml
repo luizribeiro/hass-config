@@ -57,3 +57,16 @@
   unit_of_measurement: "GB"
   icon: "mdi:harddisk"
   value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000000.0 }}"
+
+- platform: mqtt
+  name: "NUC Ingress (eno1)"
+  state_topic: "collectd/nuc/interface-eno1/if_octets"
+  unit_of_measurement: "KB/s"
+  icon: "mdi:download-network"
+  value_template: "{{ (value.split(':')[1] | float) / 1000.0 }}"
+- platform: mqtt
+  name: "NUC Egress (eno1)"
+  state_topic: "collectd/nuc/interface-eno1/if_octets"
+  unit_of_measurement: "KB/s"
+  icon: "mdi:upload-network"
+  value_template: "{{ (value.split(':')[2][:-1] | float) / 1000.0 }}"
