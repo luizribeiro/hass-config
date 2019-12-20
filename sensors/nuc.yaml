@@ -46,6 +46,13 @@
   value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(0) }}"
 
 - platform: mqtt
+  name: "NUC CPU Temperature"
+  state_topic: "collectd/nuc/sensors-coretemp-isa-0000/temperature-temp1"
+  unit_of_measurement: "°C"
+  icon: "mdi:thermometer"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
+
+- platform: mqtt
   name: "NUC Disk Free"
   state_topic: "collectd/nuc/df-root/df_complex-free"
   unit_of_measurement: "GB"
