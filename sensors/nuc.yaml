@@ -1,17 +1,3 @@
-# systemmonitor sensors (which I want to deprecate)
-- platform: systemmonitor
-  resources:
-    - type: processor_use
-    - type: memory_use_percent
-    - type: swap_use_percent
-    - type: disk_use_percent
-      arg: /
-    - type: throughput_network_in
-      arg: eno1
-    - type: throughput_network_out
-      arg: eno1
-    - type: last_boot
-
 # collectd sensors through MQTT
 - platform: mqtt
   name: "NUC CPU Usage"
