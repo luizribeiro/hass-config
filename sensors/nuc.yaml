@@ -91,3 +91,11 @@
   unit_of_measurement: "KB/s"
   icon: "mdi:upload-network"
   value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+
+# Uptime
+- platform: mqtt
+  name: "NUC Uptime"
+  state_topic: "collectd/nuc/uptime/uptime"
+  unit_of_measurement: "s"
+  icon: "mdi:clock-outline"
+  value_template: "{{ (value.split(':')[1][:-1] | int) }}"
