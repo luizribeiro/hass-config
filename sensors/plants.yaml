@@ -1,0 +1,11 @@
+- platform: miflora
+  mac: !secret miflora_bonsai_mac
+  name: "Bonsai"
+  force_update: false
+  scan_interval: 1800
+  monitored_conditions:
+    - moisture
+    - light
+    - temperature
+    - conductivity
+    - battery

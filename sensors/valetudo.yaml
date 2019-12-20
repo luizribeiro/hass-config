@@ -1,0 +1,10 @@
+- platform: rest
+  resource: http://iot-rockrobo/api/map/latest
+  name: valetudo_map
+  json_attributes:
+    - image
+    - path
+    - charger
+    - robot
+  value_template: 'OK'
+  scan_interval: 60

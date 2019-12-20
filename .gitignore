@@ -8,6 +8,7 @@
 !*.md
 !.travis.yml
 !example-service-account.json
+!sensors/
 
 # Ignore folders.
 .storage

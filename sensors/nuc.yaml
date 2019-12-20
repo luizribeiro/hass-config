@@ -1,0 +1,39 @@
+# systemmonitor sensors (which I want to deprecate)
+- platform: systemmonitor
+  resources:
+    - type: processor_use
+    - type: memory_use_percent
+    - type: swap_use_percent
+    - type: disk_use_percent
+      arg: /
+    - type: throughput_network_in
+      arg: eno1
+    - type: throughput_network_out
+      arg: eno1
+    - type: last_boot
+
+# collectd sensors through MQTT
+- platform: mqtt
+  name: "NUC CPU0 Frequency"
+  state_topic: "collectd/nuc/cpufreq-0/cpufreq"
+  unit_of_measurement: "MHz"
+  icon: "mdi:speedometer"
+  value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000.0 }}"
+- platform: mqtt
+  name: "NUC CPU1 Frequency"
+  state_topic: "collectd/nuc/cpufreq-1/cpufreq"
+  unit_of_measurement: "MHz"
+  icon: "mdi:speedometer"
+  value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000.0 }}"
+- platform: mqtt
+  name: "NUC CPU2 Frequency"
+  state_topic: "collectd/nuc/cpufreq-2/cpufreq"
+  unit_of_measurement: "MHz"
+  icon: "mdi:speedometer"
+  value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000.0 }}"
+- platform: mqtt
+  name: "NUC CPU3 Frequency"
+  state_topic: "collectd/nuc/cpufreq-3/cpufreq"
+  unit_of_measurement: "MHz"
+  icon: "mdi:speedometer"
+  value_template: "{{ (value.split(':')[1][:-1] | float) / 1000000.0 }}"
