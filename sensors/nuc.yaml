@@ -99,3 +99,4 @@
   unit_of_measurement: "s"
   icon: "mdi:clock-outline"
   value_template: "{{ (value.split(':')[1][:-1] | int) }}"
+  device_class: timestamp
