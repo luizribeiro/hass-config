@@ -40,6 +40,9 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+mqtt:
+  broker: 127.0.0.1
+
 wake_on_lan:
 
 google_assistant:
