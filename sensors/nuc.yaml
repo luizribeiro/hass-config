@@ -53,6 +53,31 @@
   value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 
 - platform: mqtt
+  name: "NUC Memory Used"
+  state_topic: "collectd/nuc/memory/memory-used"
+  unit_of_measurement: "MB"
+  icon: "mdi:chip"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+- platform: mqtt
+  name: "NUC Memory Buffered"
+  state_topic: "collectd/nuc/memory/memory-buffered"
+  unit_of_measurement: "MB"
+  icon: "mdi:chip"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+- platform: mqtt
+  name: "NUC Memory Cached"
+  state_topic: "collectd/nuc/memory/memory-cached"
+  unit_of_measurement: "MB"
+  icon: "mdi:chip"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+- platform: mqtt
+  name: "NUC Memory Free"
+  state_topic: "collectd/nuc/memory/memory-free"
+  unit_of_measurement: "MB"
+  icon: "mdi:chip"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+
+- platform: mqtt
   name: "NUC Disk Free"
   state_topic: "collectd/nuc/df-root/df_complex-free"
   unit_of_measurement: "GB"
