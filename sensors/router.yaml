@@ -52,13 +52,13 @@
   state_topic: "collectd/router/interface-br-lan/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:download-network"
-  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+  value_template: "{{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}"
 - platform: mqtt
   name: "Router Egress (LAN)"
   state_topic: "collectd/router/interface-br-lan/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:upload-network"
-  value_template: "{{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}"
+  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
 
 # Network (IoT, br-iot)
 - platform: mqtt
@@ -66,13 +66,13 @@
   state_topic: "collectd/router/interface-br-iot/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:download-network"
-  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+  value_template: "{{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}"
 - platform: mqtt
   name: "Router Egress (IoT)"
   state_topic: "collectd/router/interface-br-iot/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:upload-network"
-  value_template: "{{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}"
+  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
 
 # Wireless wlan0 (The Promised Lan, 5GHz)
 - platform: mqtt
