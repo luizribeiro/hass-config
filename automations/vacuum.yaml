@@ -1,0 +1,20 @@
+- alias: "Start the Vacuum"
+  trigger:
+    platform: time
+    at: '16:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - thu
+      - fri
+  action:
+    - service: vacuum.set_fan_speed
+      data_template:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        # only run in max fan speed on Mondays
+        fan_speed: "{{'Max' if now().weekday() == 1 else 'Balanced'}}"
+    - service: vacuum.start
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
