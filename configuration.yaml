@@ -225,5 +225,3 @@ binary_sensor:
     count: 1
 
 pi_hole:
-
-glances:
