@@ -14,24 +14,24 @@
 - alias: "Disable Nest Home/Away when guests are staying"
   trigger:
     platform: state
-    entity_id: input_select.home_mode
-    to: "Guests"
+    entity_id: binary_sensor.home_away
+    to: "on"
   action:
     - service: climate.set_preset_mode
       data_template:
         entity_id: climate.entryway
         preset_mode: "none"
 
-- alias: "Re-enable Nest Home/Away when guests leave"
+- alias: "Force Nest to be Home when Home Mode is updated to Home"
   trigger:
     platform: state
     entity_id: input_select.home_mode
-    from: "Guests"
+    to: "Home"
   action:
     - service: climate.set_preset_mode
       data_template:
         entity_id: climate.entryway
-        preset_mode: "Away and Eco"
+        preset_mode: "none"
 
 - alias: "Home is now in Party Mode"
   trigger:
