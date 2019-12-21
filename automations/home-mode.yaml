@@ -1,3 +1,13 @@
+- alias: "Sync Home Mode with Nest"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.home_away
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_mode
+        option: "{{ 'Home' if states('binary_sensor.home_away') == 'off' else 'Away' }}"
+
 - alias: "Home is now in Party Mode"
   trigger:
     platform: state
