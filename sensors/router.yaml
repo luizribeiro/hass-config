@@ -80,30 +80,30 @@
   state_topic: "collectd/router/iwinfo-wlan0/bitrate"
   unit_of_measurement: "Mbps"
   icon: "mdi:wifi"
-  value_template: "{{ ((value.split(':')[1] | float) / 1000000.0) | round(1) }}"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
 - platform: mqtt
   name: "Router wlan0 Signal Power"
   state_topic: "collectd/router/iwinfo-wlan0/signal_power"
   unit_of_measurement: "dBm"
   icon: "mdi:signal"
-  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan0 Signal Noise"
   state_topic: "collectd/router/iwinfo-wlan0/signal_noise"
   unit_of_measurement: "dBm"
   icon: "mdi:signal-off"
-  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan0 Signal Quality"
   state_topic: "collectd/router/iwinfo-wlan0/signal_quality"
   unit_of_measurement: "%"
   icon: "mdi:access-point"
-  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan0 Num Stations"
   state_topic: "collectd/router/iwinfo-wlan0/stations"
   icon: "mdi:devices"
-  value_template: "{{ value.split(':')[1] | int }}"
+  value_template: "{{ value.split(':')[1][:-1] | int }}"
 
 # Wireless wlan1 (The Promised Lan, 2.4GHz)
 - platform: mqtt
@@ -111,30 +111,30 @@
   state_topic: "collectd/router/iwinfo-wlan1/bitrate"
   unit_of_measurement: "Mbps"
   icon: "mdi:wifi"
-  value_template: "{{ ((value.split(':')[1] | float) / 1000000.0) | round(1) }}"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
 - platform: mqtt
   name: "Router wlan1 Signal Power"
   state_topic: "collectd/router/iwinfo-wlan1/signal_power"
   unit_of_measurement: "dBm"
   icon: "mdi:signal"
-  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan1 Signal Noise"
   state_topic: "collectd/router/iwinfo-wlan1/signal_noise"
   unit_of_measurement: "dBm"
   icon: "mdi:signal-off"
-  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan1 Signal Quality"
   state_topic: "collectd/router/iwinfo-wlan1/signal_quality"
   unit_of_measurement: "%"
   icon: "mdi:access-point"
-  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan1 Num Stations"
   state_topic: "collectd/router/iwinfo-wlan1/stations"
   icon: "mdi:devices"
-  value_template: "{{ value.split(':')[1] | int }}"
+  value_template: "{{ value.split(':')[1][:-1] | int }}"
 
 # Wireless wlan-iot (IoT, 5GHz)
 - platform: mqtt
@@ -142,27 +142,27 @@
   state_topic: "collectd/router/iwinfo-wlan-iot/bitrate"
   unit_of_measurement: "Mbps"
   icon: "mdi:wifi"
-  value_template: "{{ ((value.split(':')[1] | float) / 1000000.0) | round(1) }}"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
 - platform: mqtt
   name: "Router wlan-iot Signal Power"
   state_topic: "collectd/router/iwinfo-wlan-iot/signal_power"
   unit_of_measurement: "dBm"
   icon: "mdi:signal"
-  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan-iot Signal Noise"
   state_topic: "collectd/router/iwinfo-wlan-iot/signal_noise"
   unit_of_measurement: "dBm"
   icon: "mdi:signal-off"
-  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan-iot Signal Quality"
   state_topic: "collectd/router/iwinfo-wlan-iot/signal_quality"
   unit_of_measurement: "%"
   icon: "mdi:access-point"
-  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan-iot Num Stations"
   state_topic: "collectd/router/iwinfo-wlan-iot/stations"
   icon: "mdi:devices"
-  value_template: "{{ value.split(':')[1] | int }}"
+  value_template: "{{ value.split(':')[1][:-1] | int }}"
