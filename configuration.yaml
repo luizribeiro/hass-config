@@ -67,6 +67,10 @@ google_assistant:
       expose: true
       name: "Alfred"
       room: "Living Room"
+    switch.playstation_4:
+      expose: true
+      name: "PlayStation 4"
+      room: "Living Room"
 
 nest:
   client_id: !secret nest_client_id
