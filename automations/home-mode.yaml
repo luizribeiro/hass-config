@@ -11,6 +11,28 @@
         entity_id: input_select.home_mode
         option: "{{ 'Home' if states('binary_sensor.home_away') == 'off' else 'Away' }}"
 
+- alias: "Disable Nest Home/Away when guests are staying"
+  trigger:
+    platform: state
+    entity_id: input_select.home_mode
+    to: "Guests"
+  action:
+    - service: climate.set_preset_mode
+      data_template:
+        entity_id: climate.entryway
+        preset_mode: "none"
+
+- alias: "Re-enable Nest Home/Away when guests leave"
+  trigger:
+    platform: state
+    entity_id: input_select.home_mode
+    from: "Guests"
+  action:
+    - service: climate.set_preset_mode
+      data_template:
+        entity_id: climate.entryway
+        preset_mode: "Away and Eco"
+
 - alias: "Home is now in Party Mode"
   trigger:
     platform: state
