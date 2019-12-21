@@ -32,40 +32,6 @@ cards:
     type: entities
   - entity: weather.home
     type: weather-forecast
-  - entities:
-      - aggregate_func: max
-        color: red
-        entity: sensor.outside_temperature
-        name: Max
-      - aggregate_func: avg
-        color: orange
-        entity: sensor.outside_temperature
-        name: Avg
-      - aggregate_func: min
-        color: blue
-        entity: sensor.outside_temperature
-        name: Min
-    hours_to_show: 168
-    name: Outside Temperature Past Week
-    points_per_hour: 0.041666667
-    type: 'custom:mini-graph-card'
-  - entities:
-      - aggregate_func: max
-        color: red
-        entity: sensor.entryway_thermostat_temperature
-        name: Max
-      - aggregate_func: avg
-        color: orange
-        entity: sensor.entryway_thermostat_temperature
-        name: Avg
-      - aggregate_func: min
-        color: blue
-        entity: sensor.entryway_thermostat_temperature
-        name: Min
-    hours_to_show: 168
-    name: Inside Temperature Past Week
-    points_per_hour: 0.041666667
-    type: 'custom:mini-graph-card'
 icon: 'mdi:home'
 path: default_view
 title: Overview
