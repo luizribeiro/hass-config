@@ -1,3 +1,6 @@
+title: Living Room
+path: living-room
+icon: 'mdi:sofa'
 badges: []
 cards:
   - entities:
@@ -76,6 +79,3 @@ cards:
       controls: true
       volume: true
     type: 'custom:mini-media-player'
-icon: 'mdi:sofa'
-path: living-room
-title: Living Room

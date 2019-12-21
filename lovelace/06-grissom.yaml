@@ -1,3 +1,7 @@
+title: Grissom
+path: grissom
+icon: 'mdi:desktop-mac'
+panel: false
 badges: []
 cards:
   - entities:
@@ -80,7 +84,3 @@ cards:
         type: 'custom:mini-graph-card'
     title: Network
     type: horizontal-stack
-icon: 'mdi:desktop-mac'
-panel: false
-path: grissom
-title: Grissom

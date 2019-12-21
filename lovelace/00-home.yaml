@@ -1,3 +1,6 @@
+title: Overview
+path: default_view
+icon: 'mdi:home'
 badges: []
 cards:
   - entity: climate.entryway
@@ -32,6 +35,3 @@ cards:
     type: entities
   - entity: weather.home
     type: weather-forecast
-icon: 'mdi:home'
-path: default_view
-title: Overview

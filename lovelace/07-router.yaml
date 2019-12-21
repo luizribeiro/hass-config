@@ -1,3 +1,6 @@
+title: Router
+path: router
+icon: 'mdi:router-wireless'
 badges: []
 cards:
   - entities:
@@ -176,6 +179,3 @@ cards:
         type: horizontal-stack
     title: 'IoT, 2.4GHz'
     type: vertical-stack
-icon: 'mdi:router-wireless'
-path: router
-title: Router

@@ -1,3 +1,6 @@
+title: Settings
+path: settings
+icon: 'mdi:wrench'
 badges: []
 cards:
   - entities:
@@ -5,6 +8,3 @@ cards:
     show_header_toggle: false
     title: Automations
     type: entities
-icon: 'mdi:wrench'
-path: settings
-title: Settings

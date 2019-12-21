@@ -1,3 +1,7 @@
+title: NUC
+path: nuc
+icon: 'mdi:server-network'
+panel: false
 badges: []
 cards:
   - entities:
@@ -133,7 +137,3 @@ cards:
     show_header_toggle: false
     title: Pi-hole
     type: entities
-icon: 'mdi:server-network'
-panel: false
-path: nuc
-title: NUC

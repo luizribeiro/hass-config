@@ -1,3 +1,6 @@
+title: Plants
+path: plants
+icon: 'mdi:sprout'
 badges: []
 cards:
   - cards:
@@ -36,6 +39,3 @@ cards:
         type: entities
     title: Bonsai
     type: vertical-stack
-icon: 'mdi:sprout'
-path: plants
-title: Plants

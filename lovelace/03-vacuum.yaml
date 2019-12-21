@@ -1,3 +1,6 @@
+title: Vacuum
+path: vacuum
+icon: 'mdi:robot-vacuum-variant'
 badges: []
 cards:
   - cards:
@@ -20,6 +23,3 @@ cards:
         refresh_interval: 0
         type: history-graph
     type: vertical-stack
-icon: 'mdi:robot-vacuum-variant'
-path: vacuum
-title: Vacuum
