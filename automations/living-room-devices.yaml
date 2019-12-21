@@ -6,3 +6,12 @@
   action:
     service: switch.turn_on
     entity_id: switch.zvox_power
+
+- alias: Turn on ZVOX when PS4 turns on
+  trigger:
+    platform: state
+    entity_id: switch.playstation_4
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.zvox_power
