@@ -72,7 +72,7 @@ cards:
             points_per_hour: 12
             type: 'custom:mini-graph-card'
         type: horizontal-stack
-    title: LAN (br-iot)
+    title: IoT (br-iot)
     type: vertical-stack
   - cards:
       - cards:
