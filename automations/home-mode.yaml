@@ -16,6 +16,9 @@
     platform: state
     entity_id: binary_sensor.home_away
     to: "on"
+  condition:
+    condition: template
+    value_template: "{{ is_state('input_select.home_mode', 'Guests') }}"
   action:
     - service: climate.set_preset_mode
       data_template:
