@@ -1,0 +1,10 @@
+badges: []
+cards:
+  - entities:
+      - entity: automation.turn_off_corner_lamp
+    show_header_toggle: false
+    title: Automations
+    type: entities
+icon: 'mdi:wrench'
+path: settings
+title: Settings

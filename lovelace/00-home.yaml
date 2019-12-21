@@ -1,0 +1,71 @@
+badges: []
+cards:
+  - entity: climate.entryway
+    theme: default
+    type: thermostat
+  - entities:
+      - entity: lock.front_door
+      - entity: binary_sensor.front_door_open
+      - entity: vacuum.xiaomi_vacuum_cleaner
+    show_header_toggle: false
+    type: entities
+  - entities:
+      - entity: light.living_room
+      - entity: light.bedroom
+    title: Lights
+    type: entities
+  - entities:
+      - entity: group.living_room_devices
+        icon: 'mdi:power-plug'
+      - entity: group.bedroom_devices
+        icon: 'mdi:power-plug'
+    title: Devices
+    type: entities
+  - entities:
+      - entity: sensor.entryway_thermostat_temperature
+        name: Thermostat Temperature
+      - entity: sensor.outside_temperature
+      - entity: sensor.entryway_thermostat_humidity
+        name: Thermostat Humidity
+      - entity: sensor.outside_humidity
+        icon: 'mdi:water-percent'
+    type: entities
+  - entity: weather.home
+    type: weather-forecast
+  - entities:
+      - aggregate_func: max
+        color: red
+        entity: sensor.outside_temperature
+        name: Max
+      - aggregate_func: avg
+        color: orange
+        entity: sensor.outside_temperature
+        name: Avg
+      - aggregate_func: min
+        color: blue
+        entity: sensor.outside_temperature
+        name: Min
+    hours_to_show: 168
+    name: Outside Temperature Past Week
+    points_per_hour: 0.041666667
+    type: 'custom:mini-graph-card'
+  - entities:
+      - aggregate_func: max
+        color: red
+        entity: sensor.entryway_thermostat_temperature
+        name: Max
+      - aggregate_func: avg
+        color: orange
+        entity: sensor.entryway_thermostat_temperature
+        name: Avg
+      - aggregate_func: min
+        color: blue
+        entity: sensor.entryway_thermostat_temperature
+        name: Min
+    hours_to_show: 168
+    name: Inside Temperature Past Week
+    points_per_hour: 0.041666667
+    type: 'custom:mini-graph-card'
+icon: 'mdi:home'
+path: default_view
+title: Overview

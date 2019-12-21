@@ -1,0 +1,139 @@
+badges: []
+cards:
+  - entities:
+      - entity: sensor.nuc_cpu_usage
+        name: CPU Usage
+      - entity: sensor.nuc_memory_free
+        name: Memory Free
+      - entity: sensor.nuc_disk_free
+        name: Disk Free
+      - entity: sensor.nuc_cpu_temperature
+        name: CPU Temperature
+      - entity: sensor.nuc_ingress_eno1
+        name: Ingress (eno1)
+      - entity: sensor.nuc_egress_eno1
+        name: Egress (eno1)
+      - entity: sensor.nuc_last_boot
+        name: Last Boot
+    show_header_toggle: false
+    title: NUC Overview
+    type: entities
+  - cards:
+      - cards:
+          - entities:
+              - sensor.nuc_cpu_usage
+            hours_to_show: 1
+            line_color: orange
+            name: Usage
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.nuc_cpu_temperature
+            hours_to_show: 1
+            line_color: orange
+            name: Temperature
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: CPU Overview
+    type: vertical-stack
+  - cards:
+      - cards:
+          - entities:
+              - sensor.nuc_memory_free
+            hours_to_show: 1
+            line_color: green
+            name: Free
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.nuc_memory_used
+            hours_to_show: 1
+            line_color: red
+            name: Used
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - cards:
+          - entities:
+              - sensor.nuc_memory_cached
+            hours_to_show: 1
+            line_color: blue
+            name: Page Cache
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.nuc_memory_buffered
+            hours_to_show: 1
+            line_color: orange
+            name: Buffer Cache
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: Memory
+    type: vertical-stack
+  - cards:
+      - cards:
+          - entities:
+              - sensor.nuc_cpu0_frequency
+            hours_to_show: 1
+            line_color: gray
+            name: Core 0
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.nuc_cpu1_frequency
+            hours_to_show: 1
+            line_color: gray
+            name: Core 1
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - cards:
+          - entities:
+              - sensor.nuc_cpu2_frequency
+            hours_to_show: 1
+            line_color: gray
+            name: Core 2
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.nuc_cpu3_frequency
+            hours_to_show: 1
+            line_color: gray
+            name: Core 3
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: CPU Frequency
+    type: vertical-stack
+  - cards:
+      - entities:
+          - sensor.nuc_ingress_eno1
+        hours_to_show: 1
+        line_color: red
+        name: Ingress
+        points_per_hour: 12
+        type: 'custom:mini-graph-card'
+      - entities:
+          - sensor.nuc_egress_eno1
+        hours_to_show: 1
+        line_color: blue
+        name: Egress
+        points_per_hour: 12
+        type: 'custom:mini-graph-card'
+    title: Network
+    type: horizontal-stack
+  - entities:
+      - entity: sensor.pi_hole_dns_queries_today
+      - entity: sensor.pi_hole_dns_queries_cached
+      - entity: sensor.pi_hole_dns_queries_forwarded
+      - entity: sensor.pi_hole_ads_blocked_today
+      - entity: sensor.pi_hole_ads_percentage_blocked_today
+    show_header_toggle: false
+    title: Pi-hole
+    type: entities
+icon: 'mdi:server-network'
+panel: false
+path: nuc
+title: NUC

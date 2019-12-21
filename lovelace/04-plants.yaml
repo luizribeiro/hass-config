@@ -1,0 +1,41 @@
+badges: []
+cards:
+  - cards:
+      - cards:
+          - entities:
+              - sensor.bonsai_light_intensity
+            hours_to_show: 24
+            line_color: orange
+            name: Light Intensity
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.bonsai_moisture
+            hours_to_show: 24
+            line_color: blue
+            name: Moisture
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - cards:
+          - entities:
+              - sensor.bonsai_temperature
+            hours_to_show: 24
+            line_color: red
+            name: Temperature
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.bonsai_conductivity
+            hours_to_show: 24
+            line_color: green
+            name: Conductivity
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - entities:
+          - entity: sensor.bonsai_battery
+            name: Sensor Battery
+        show_header_toggle: false
+        type: entities
+    title: Bonsai
+    type: vertical-stack
+icon: 'mdi:sprout'
+path: plants
+title: Plants

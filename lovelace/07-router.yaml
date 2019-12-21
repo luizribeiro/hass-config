@@ -1,0 +1,181 @@
+badges: []
+cards:
+  - entities:
+      - entity: sensor.router_cpu_usage
+        name: CPU Usage
+      - entity: sensor.router_memory_free
+        name: Memory Free
+      - entity: sensor.router_wlan0_num_stations
+        name: The Promised LAN 5GHz Devices
+      - entity: sensor.router_wlan1_num_stations
+        name: The Promised LAN 2.4GHz Devices
+      - entity: sensor.router_wlan_iot_num_stations
+        name: IoT 2.4GHz Devices
+    show_header_toggle: false
+    title: Router Overview
+    type: entities
+  - cards:
+      - cards:
+          - entities:
+              - sensor.router_ingress_wan
+            hours_to_show: 1
+            line_color: red
+            name: Ingress
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.router_egress_wan
+            hours_to_show: 1
+            line_color: blue
+            name: Egress
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: WAN (eth1.2)
+    type: vertical-stack
+  - cards:
+      - cards:
+          - entities:
+              - sensor.router_ingress_lan
+            hours_to_show: 1
+            line_color: red
+            name: Ingress
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.router_egress_lan
+            hours_to_show: 1
+            line_color: blue
+            name: Egress
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: LAN (br-lan)
+    type: vertical-stack
+  - cards:
+      - cards:
+          - entities:
+              - sensor.router_ingress_iot
+            hours_to_show: 1
+            line_color: red
+            name: Ingress
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.router_egress_iot
+            hours_to_show: 1
+            line_color: blue
+            name: Egress
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: LAN (br-iot)
+    type: vertical-stack
+  - cards:
+      - cards:
+          - entities:
+              - sensor.router_wlan0_bitrate
+            hours_to_show: 1
+            line_color: blue
+            name: Bitrate
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.router_wlan0_signal_quality
+            hours_to_show: 1
+            line_color: orange
+            name: Signal Quality
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - cards:
+          - entities:
+              - sensor.router_wlan0_signal_power
+            hours_to_show: 1
+            line_color: green
+            name: Signal Power
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.router_wlan0_signal_noise
+            hours_to_show: 1
+            line_color: red
+            name: Signal Noise
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: 'The Promised LAN, 5GHz'
+    type: vertical-stack
+  - cards:
+      - cards:
+          - entities:
+              - sensor.router_wlan1_bitrate
+            hours_to_show: 1
+            line_color: blue
+            name: Bitrate
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.router_wlan1_signal_quality
+            hours_to_show: 1
+            line_color: orange
+            name: Signal Quality
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - cards:
+          - entities:
+              - sensor.router_wlan1_signal_power
+            hours_to_show: 1
+            line_color: green
+            name: Signal Power
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.router_wlan1_signal_noise
+            hours_to_show: 1
+            line_color: red
+            name: Signal Noise
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: 'The Promised LAN, 2.4GHz'
+    type: vertical-stack
+  - cards:
+      - cards:
+          - entities:
+              - sensor.router_wlan_iot_bitrate
+            hours_to_show: 1
+            line_color: blue
+            name: Bitrate
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.router_wlan_iot_signal_quality
+            hours_to_show: 1
+            line_color: orange
+            name: Signal Quality
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - cards:
+          - entities:
+              - sensor.router_wlan_iot_signal_power
+            hours_to_show: 1
+            line_color: green
+            name: Signal Power
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.router_wlan_iot_signal_noise
+            hours_to_show: 1
+            line_color: red
+            name: Signal Noise
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: 'IoT, 2.4GHz'
+    type: vertical-stack
+icon: 'mdi:router-wireless'
+path: router
+title: Router

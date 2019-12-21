@@ -1,0 +1,81 @@
+badges: []
+cards:
+  - entities:
+      - entity: switch.living_room_tv
+        icon: 'mdi:television'
+      - entity: switch.playstation_4
+        icon: 'mdi:playstation'
+    show_header_toggle: true
+    title: Devices
+    type: entities
+  - entities:
+      - entity: light.corner_lamp
+      - entity: light.tv_rack_lamp
+      - entity: light.christmas_tree
+    show_header_toggle: true
+    title: Lights
+    type: entities
+  - cards:
+      - entity: switch.zvox_power
+        icon: 'mdi:power'
+        icon_height: 48px
+        show_icon: true
+        show_name: false
+        tap_action:
+          action: call-service
+          service: switch.turn_off
+          service_data:
+            entity_id: switch.zvox_power
+        type: entity-button
+      - entity: switch.zvox_mute
+        icon: 'mdi:volume-mute'
+        icon_height: 48px
+        show_icon: true
+        show_name: false
+        tap_action:
+          action: call-service
+          service: switch.turn_off
+          service_data:
+            entity_id: switch.zvox_mute
+        type: entity-button
+      - entity: switch.zvox_volume_down
+        icon: 'mdi:volume-minus'
+        icon_height: 48px
+        show_icon: true
+        show_name: false
+        tap_action:
+          action: call-service
+          service: switch.turn_off
+          service_data:
+            entity_id: switch.zvox_volume_down
+        type: entity-button
+      - entity: switch.zvox_volume_up
+        icon: 'mdi:volume-plus'
+        icon_height: 48px
+        show_icon: true
+        show_name: false
+        tap_action:
+          action: call-service
+          service: switch.turn_off
+          service_data:
+            entity_id: switch.zvox_volume_up
+        type: entity-button
+    type: horizontal-stack
+  - entity: media_player.lg_webos_smart_tv
+    hide:
+      controls: true
+      volume: true
+    icon: 'mdi:television'
+    type: 'custom:mini-media-player'
+  - artwork: cover
+    entity: media_player.chromecastultra4889
+    name: Chromecast
+    type: 'custom:mini-media-player'
+  - entity: media_player.playstation_4
+    hide:
+      controls: true
+      volume: true
+    type: 'custom:mini-media-player'
+icon: 'mdi:sofa'
+path: living-room
+title: Living Room

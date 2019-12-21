@@ -1,0 +1,86 @@
+badges: []
+cards:
+  - entities:
+      - entity: sensor.grissom_cpu_usage
+        name: CPU Usage
+      - entity: sensor.grissom_memory_free
+        name: Memory Free
+      - entity: sensor.grissom_disk_free
+        name: Disk Free
+      - entity: sensor.grissom_ingress_en1
+        name: Ingress (en1)
+      - entity: sensor.grissom_egress_en1
+        name: Egress (en1)
+      - entity: sensor.grissom_last_boot
+        name: Last Boot
+    show_header_toggle: false
+    title: Hackintosh Overview
+    type: entities
+  - cards:
+      - cards:
+          - entities:
+              - sensor.grissom_cpu_usage
+            hours_to_show: 1
+            line_color: orange
+            name: Usage
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: CPU Overview
+    type: vertical-stack
+  - cards:
+      - cards:
+          - entities:
+              - sensor.grissom_memory_free
+            hours_to_show: 1
+            line_color: green
+            name: Free
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.grissom_memory_wired
+            hours_to_show: 1
+            line_color: red
+            name: Wired
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - cards:
+          - entities:
+              - sensor.grissom_memory_active
+            hours_to_show: 1
+            line_color: blue
+            name: Active
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+          - entities:
+              - sensor.grissom_memory_inactive
+            hours_to_show: 1
+            line_color: orange
+            name: Inactive
+            points_per_hour: 12
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+    title: Memory
+    type: vertical-stack
+  - cards:
+      - entities:
+          - sensor.grissom_ingress_en1
+        hours_to_show: 1
+        line_color: red
+        name: Ingress
+        points_per_hour: 12
+        type: 'custom:mini-graph-card'
+      - entities:
+          - sensor.grissom_egress_en1
+        hours_to_show: 1
+        line_color: blue
+        name: Egress
+        points_per_hour: 12
+        type: 'custom:mini-graph-card'
+    title: Network
+    type: horizontal-stack
+icon: 'mdi:desktop-mac'
+panel: false
+path: grissom
+title: Grissom

@@ -9,6 +9,7 @@
 !.travis.yml
 !example-service-account.json
 !sensors/
+!lovelace/
 
 # Ignore folders.
 .storage
