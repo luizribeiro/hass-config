@@ -1,10 +1,23 @@
 # CPU Overview
 - platform: mqtt
-  name: "Router CPU Usage"
-  state_topic: "collectd/router/cpu/percent-idle"
+  name: "Router CPU0 Idle"
+  state_topic: "collectd/router/cpu-0/cpu-idle"
   unit_of_measurement: "%"
   icon: "mdi:memory"
-  value_template: "{{ (100.0 - (value.split(':')[1][:-1] | float)) | round(1) }}"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router CPU1 Idle"
+  state_topic: "collectd/router/cpu-1/cpu-idle"
+  unit_of_measurement: "%"
+  icon: "mdi:memory"
+  value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
+- platform: template
+  sensors:
+    router_cpu_usage:
+      friendly_name: "Router CPU Usage"
+      unit_of_measurement: "%"
+      icon_template: "mdi:memory"
+      value_template: "{{ (100.0 - (states('sensor.router_cpu0_idle') | float + states('sensor.router_cpu1_idle') | float) / 2.0) | round(1)}}"
 
 # Memory
 - platform: mqtt
