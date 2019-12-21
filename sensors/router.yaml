@@ -40,7 +40,7 @@
   icon: "mdi:download-network"
   value_template: "{{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}"
 - platform: mqtt
-  name: "Router Egress (eno1)"
+  name: "Router Egress (WAN)"
   state_topic: "collectd/router/interface-eth1.2/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:upload-network"
