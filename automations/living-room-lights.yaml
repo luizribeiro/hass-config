@@ -1,0 +1,28 @@
+- alias: "Turn on lights before sunset"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:15:00"
+  action:
+    - service: light.turn_on
+      entity_id: light.corner_lamp
+    - service: light.turn_on
+      entity_id: light.tv_rack_lamp
+    - service: light.turn_on
+      entity_id: light.christmas_tree
+
+- alias: "Turn off Christmas Tree"
+  trigger:
+    platform: time
+    at: "02:00:00"
+  action:
+    - service: light.turn_off
+      entity_id: light.christmas_tree
+
+- alias: "Turn off Living Room lights"
+  trigger:
+    platform: time
+    at: "22:30:00"
+  action:
+    - service: light.turn_off
+      entity_id: light.living_room

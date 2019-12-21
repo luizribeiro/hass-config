@@ -1,0 +1,23 @@
+- alias: "Unlock door from iOS"
+  hide_entity: true
+  initial_state: true
+  trigger:
+    - platform: event
+      event_type: ios.action_fired
+      event_data:
+        actionName: Unlock
+  action:
+    service: lock.unlock
+    entity_id: lock.front_door
+
+- alias: "Lock door from iOS"
+  hide_entity: true
+  initial_state: true
+  trigger:
+    - platform: event
+      event_type: ios.action_fired
+      event_data:
+        actionName: Lock
+  action:
+    service: lock.lock
+    entity_id: lock.front_door

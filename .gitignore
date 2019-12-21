@@ -10,6 +10,7 @@
 !example-service-account.json
 !sensors/
 !lovelace/
+!automations/
 
 # Ignore folders.
 .storage
