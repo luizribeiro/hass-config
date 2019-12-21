@@ -62,12 +62,10 @@
     - service: light.turn_off
       entity_id: light.christmas_tree
 
-- alias: "Turn off Corner Lamp"
+- alias: "Turn off Living Room lights"
   trigger:
     platform: time
     at: "22:30:00"
   action:
     - service: light.turn_off
-      entity_id: light.corner_lamp
-    - service: light.turn_off
-      entity_id: light.tv_rack_lamp
+      entity_id: light.living_room

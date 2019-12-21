@@ -8,7 +8,7 @@ cards:
     show_header_toggle: false
     type: entities
   - entities:
-      - entity: automation.turn_off_corner_lamp
+      - entity: automation.turn_off_living_room_lights
     show_header_toggle: false
     title: Automations
     type: entities
