@@ -179,3 +179,12 @@
   state_topic: "collectd/router/iwinfo-wlan-iot/stations"
   icon: "mdi:devices"
   value_template: "{{ value.split(':')[1][:-1] | int }}"
+
+# Uptime
+- platform: mqtt
+  name: "Router Last Boot"
+  state_topic: "collectd/router/uptime/uptime"
+  unit_of_measurement: "s"
+  icon: "mdi:clock-outline"
+  value_template: "{{ (as_timestamp(now()) - (value.split(':')[1][:-1] | int)) | timestamp_local }}"
+  device_class: timestamp
