@@ -79,7 +79,7 @@
   name: "Router wlan0 Bitrate"
   state_topic: "collectd/router/iwinfo-wlan0/bitrate"
   unit_of_measurement: "Mbps"
-  icon: "mdi:wifi"
+  icon: "mdi:speedometer"
   value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
 - platform: mqtt
   name: "Router wlan0 Signal Power"
@@ -97,7 +97,7 @@
   name: "Router wlan0 Signal Quality"
   state_topic: "collectd/router/iwinfo-wlan0/signal_quality"
   unit_of_measurement: "%"
-  icon: "mdi:access-point"
+  icon: "mdi:radio-tower"
   value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan0 Num Stations"
@@ -110,7 +110,7 @@
   name: "Router wlan1 Bitrate"
   state_topic: "collectd/router/iwinfo-wlan1/bitrate"
   unit_of_measurement: "Mbps"
-  icon: "mdi:wifi"
+  icon: "mdi:speedometer"
   value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
 - platform: mqtt
   name: "Router wlan1 Signal Power"
@@ -128,7 +128,7 @@
   name: "Router wlan1 Signal Quality"
   state_topic: "collectd/router/iwinfo-wlan1/signal_quality"
   unit_of_measurement: "%"
-  icon: "mdi:access-point"
+  icon: "mdi:radio-tower"
   value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan1 Num Stations"
@@ -141,7 +141,7 @@
   name: "Router wlan-iot Bitrate"
   state_topic: "collectd/router/iwinfo-wlan-iot/bitrate"
   unit_of_measurement: "Mbps"
-  icon: "mdi:wifi"
+  icon: "mdi:speedometer"
   value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
 - platform: mqtt
   name: "Router wlan-iot Signal Power"
@@ -159,7 +159,7 @@
   name: "Router wlan-iot Signal Quality"
   state_topic: "collectd/router/iwinfo-wlan-iot/signal_quality"
   unit_of_measurement: "%"
-  icon: "mdi:access-point"
+  icon: "mdi:radio-tower"
   value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 - platform: mqtt
   name: "Router wlan-iot Num Stations"
