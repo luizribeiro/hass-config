@@ -1,3 +1,11 @@
+# CPU Overview
+- platform: mqtt
+  name: "Grissom CPU Usage"
+  state_topic: "collectd/grissom/cpu/percent-idle"
+  unit_of_measurement: "%"
+  icon: "mdi:memory"
+  value_template: "{{ (100.0 - (value.split(':')[1][:-1] | float)) | round(1) }}"
+
 # Memory
 - platform: mqtt
   name: "Grissom Memory Active"
