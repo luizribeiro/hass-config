@@ -1,0 +1,153 @@
+# CPU Overview
+- platform: mqtt
+  name: "Router CPU Usage"
+  state_topic: "collectd/router/cpu/percent-idle"
+  unit_of_measurement: "%"
+  icon: "mdi:memory"
+  value_template: "{{ (100.0 - (value.split(':')[1][:-1] | float)) | round(1) }}"
+
+# Memory
+- platform: mqtt
+  name: "Router Memory Used"
+  state_topic: "collectd/router/memory/memory-used"
+  unit_of_measurement: "MB"
+  icon: "mdi:chip"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+- platform: mqtt
+  name: "Router Memory Buffered"
+  state_topic: "collectd/router/memory/memory-buffered"
+  unit_of_measurement: "MB"
+  icon: "mdi:chip"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+- platform: mqtt
+  name: "Router Memory Cached"
+  state_topic: "collectd/router/memory/memory-cached"
+  unit_of_measurement: "MB"
+  icon: "mdi:chip"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+- platform: mqtt
+  name: "Router Memory Free"
+  state_topic: "collectd/router/memory/memory-free"
+  unit_of_measurement: "MB"
+  icon: "mdi:chip"
+  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+
+# Network (WAN, eth1.2)
+- platform: mqtt
+  name: "Router Ingress (WAN)"
+  state_topic: "collectd/router/interface-eth1.2/if_octets"
+  unit_of_measurement: "KB/s"
+  icon: "mdi:download-network"
+  value_template: "{{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}"
+- platform: mqtt
+  name: "Router Egress (eno1)"
+  state_topic: "collectd/router/interface-eth1.2/if_octets"
+  unit_of_measurement: "KB/s"
+  icon: "mdi:upload-network"
+  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+
+# Network (LAN, br-lan)
+- platform: mqtt
+  name: "Router Ingress (LAN)"
+  state_topic: "collectd/router/interface-br-lan/if_octets"
+  unit_of_measurement: "KB/s"
+  icon: "mdi:download-network"
+  value_template: "{{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}"
+- platform: mqtt
+  name: "Router Egress (LAN)"
+  state_topic: "collectd/router/interface-br-lan/if_octets"
+  unit_of_measurement: "KB/s"
+  icon: "mdi:upload-network"
+  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+
+# Network (IoT, br-iot)
+- platform: mqtt
+  name: "Router Ingress (IoT)"
+  state_topic: "collectd/router/interface-br-iot/if_octets"
+  unit_of_measurement: "KB/s"
+  icon: "mdi:download-network"
+  value_template: "{{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}"
+- platform: mqtt
+  name: "Router Egress (IoT)"
+  state_topic: "collectd/router/interface-br-iot/if_octets"
+  unit_of_measurement: "KB/s"
+  icon: "mdi:upload-network"
+  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+
+# Wireless wlan0 (The Promised Lan, 5GHz)
+- platform: mqtt
+  name: "Router wlan0 Bitrate"
+  state_topic: "collectd/router/iwinfo-wlan0/bitrate"
+  unit_of_measurement: "Mbps"
+  icon: "mdi:wifi"
+  value_template: "{{ ((value.split(':')[1] | float) / 1000000.0) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan0 Signal Power"
+  state_topic: "collectd/router/iwinfo-wlan0/signal_power"
+  unit_of_measurement: "dBm"
+  icon: "mdi:signal"
+  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan0 Signal Noise"
+  state_topic: "collectd/router/iwinfo-wlan0/signal_noise"
+  unit_of_measurement: "dBm"
+  icon: "mdi:signal-off"
+  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan0 Signal Quality"
+  state_topic: "collectd/router/iwinfo-wlan0/signal_quality"
+  unit_of_measurement: "%"
+  icon: "mdi:access-point"
+  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+
+# Wireless wlan1 (The Promised Lan, 2.4GHz)
+- platform: mqtt
+  name: "Router wlan1 Bitrate"
+  state_topic: "collectd/router/iwinfo-wlan1/bitrate"
+  unit_of_measurement: "Mbps"
+  icon: "mdi:wifi"
+  value_template: "{{ ((value.split(':')[1] | float) / 1000000.0) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan1 Signal Power"
+  state_topic: "collectd/router/iwinfo-wlan1/signal_power"
+  unit_of_measurement: "dBm"
+  icon: "mdi:signal"
+  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan1 Signal Noise"
+  state_topic: "collectd/router/iwinfo-wlan1/signal_noise"
+  unit_of_measurement: "dBm"
+  icon: "mdi:signal-off"
+  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan1 Signal Quality"
+  state_topic: "collectd/router/iwinfo-wlan1/signal_quality"
+  unit_of_measurement: "%"
+  icon: "mdi:access-point"
+  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+
+# Wireless wlan-iot (IoT, 5GHz)
+- platform: mqtt
+  name: "Router wlan-iot Bitrate"
+  state_topic: "collectd/router/iwinfo-wlan-iot/bitrate"
+  unit_of_measurement: "Mbps"
+  icon: "mdi:wifi"
+  value_template: "{{ ((value.split(':')[1] | float) / 1000000.0) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan-iot Signal Power"
+  state_topic: "collectd/router/iwinfo-wlan-iot/signal_power"
+  unit_of_measurement: "dBm"
+  icon: "mdi:signal"
+  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan-iot Signal Noise"
+  state_topic: "collectd/router/iwinfo-wlan-iot/signal_noise"
+  unit_of_measurement: "dBm"
+  icon: "mdi:signal-off"
+  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan-iot Signal Quality"
+  state_topic: "collectd/router/iwinfo-wlan-iot/signal_quality"
+  unit_of_measurement: "%"
+  icon: "mdi:access-point"
+  value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
