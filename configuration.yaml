@@ -76,6 +76,12 @@ google_assistant:
       aliases:
         - "PS4"
       room: "Living Room"
+    switch.grissom:
+      expose: true
+      name: "Hackintosh"
+      aliases:
+        - "Grissom"
+      room: "Living Room"
 
 nest:
   client_id: !secret nest_client_id
@@ -180,6 +186,19 @@ switch:
           service: media_player.turn_off
           data:
             entity_id: media_player.bedroom_tv
+      grissom:
+        friendly_name: 'Grissom'
+        value_template: "{{ not is_state('binary_sensor.grissom_status', 'off') }}"
+        icon_template: "mdi:desktop-mac"
+        turn_on:
+          service: wake_on_lan.send_magic_packet
+          data:
+            mac: !secret grissom_mac
+        turn_off:
+          # TODO: find a way to sleep my hackintosh
+          service: wake_on_lan.send_magic_packet
+          data:
+            mac: !secret grissom_mac
   - platform: broadlink
     type: rm2_pro_plus
     host: 'iot-rmpro'
@@ -232,6 +251,10 @@ binary_sensor:
     host: 'living-room-tv'
     scan_interval: 1
     count: 1
+  - platform: template
+    sensors:
+      grissom_status:
+        value_template: "{{ (states('sensor.grissom_seconds_since_last_update') | int) < 60 }}"
 
 input_select:
   home_mode:

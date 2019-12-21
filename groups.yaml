@@ -3,6 +3,7 @@ living_room_devices:
   entities:
     - switch.living_room_tv
     - switch.playstation_4
+    - switch.grissom
 bedroom_devices:
   name: Bedroom Devices
   entities:

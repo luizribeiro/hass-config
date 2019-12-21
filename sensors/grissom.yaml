@@ -68,3 +68,10 @@
   icon: "mdi:clock-outline"
   value_template: "{{ (as_timestamp(now()) - (value.split(':')[1][:-1] | int)) | timestamp_local }}"
   device_class: timestamp
+
+# Last Update
+- platform: template
+  sensors:
+    grissom_seconds_since_last_update:
+      unit_of_measurement: 's'
+      value_template: "{{ as_timestamp(now()) - as_timestamp(states.sensor.grissom_cpu_usage.last_updated) }}"
