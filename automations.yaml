@@ -7,16 +7,6 @@
     service: switch.turn_on
     entity_id: switch.zvox_power
 
-- alias: "Turn on TV when PlayStation 4 turns on"
-  trigger:
-    platform: state
-    entity_id: media_player.playstation_4
-    from: 'standby'
-  action:
-    service: switch.turn_on
-    entity_id: switch.ir_living_room_tv
-
-
 - alias: "Unlock door from iOS"
   hide_entity: true
   initial_state: true
