@@ -99,6 +99,11 @@
   unit_of_measurement: "%"
   icon: "mdi:access-point"
   value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan0 Num Stations"
+  state_topic: "collectd/router/iwinfo-wlan0/stations"
+  icon: "mdi:devices"
+  value_template: "{{ value.split(':')[1] | int }}"
 
 # Wireless wlan1 (The Promised Lan, 2.4GHz)
 - platform: mqtt
@@ -125,6 +130,11 @@
   unit_of_measurement: "%"
   icon: "mdi:access-point"
   value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan1 Num Stations"
+  state_topic: "collectd/router/iwinfo-wlan1/stations"
+  icon: "mdi:devices"
+  value_template: "{{ value.split(':')[1] | int }}"
 
 # Wireless wlan-iot (IoT, 5GHz)
 - platform: mqtt
@@ -151,3 +161,8 @@
   unit_of_measurement: "%"
   icon: "mdi:access-point"
   value_template: "{{ (value.split(':')[1] | float) | round(1) }}"
+- platform: mqtt
+  name: "Router wlan-iot Num Stations"
+  state_topic: "collectd/router/iwinfo-wlan-iot/stations"
+  icon: "mdi:devices"
+  value_template: "{{ value.split(':')[1] | int }}"
