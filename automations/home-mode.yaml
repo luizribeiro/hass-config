@@ -2,6 +2,9 @@
   trigger:
     platform: state
     entity_id: binary_sensor.home_away
+  condition:
+    condition: template
+    value_template: "{{ not is_state('input_select.home_mode', 'Guests') }}"
   action:
     - service: input_select.select_option
       data_template:
