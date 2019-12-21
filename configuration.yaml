@@ -120,7 +120,6 @@ light:
   - platform: group
     name: Living Room
     entities:
-      - light.christmas_tree
       - light.corner_lamp
       - light.tv_rack_lamp
 
