@@ -77,3 +77,17 @@
   action:
     - service: automation.turn_on
       entity_id: automation.turn_off_living_room_lights
+
+- alias: "Automatically disable Party Mode"
+  trigger:
+    platform: state
+    entity_id: input_select.home_mode
+    platform: state
+    entity_id: device_tracker.paulus, device_tracker.anne_therese
+    to: "Party"
+    for: "10:00:00"
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_mode
+        option: "Home"
