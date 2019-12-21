@@ -224,4 +224,31 @@ binary_sensor:
     scan_interval: 1
     count: 1
 
+input_select:
+  home_mode:
+    name: "Home Mode"
+    options:
+      - "Home"
+      - "Away"
+      - "Party"
+      - "Guests"
+    initial: "Home"
+    icon: mdi:home
+  router_selected_interface:
+    name: "Router Interface"
+    options:
+      - "WAN (eth1.2)"
+      - "LAN (br-lan)"
+      - "IoT (br-iot)"
+    initial: "WAN (eth1.2)"
+    icon: mdi:network-router
+  router_selected_wifi:
+    name: "Router Interface"
+    options:
+      - "The Promised LAN (5GHz)"
+      - "The Promised LAN (2.4GHz)"
+      - "IoT (2.4GHz)"
+    initial: "The Promised LAN (5GHz)"
+    icon: mdi:access-point-network
+
 pi_hole:
