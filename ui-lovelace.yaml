@@ -15,5 +15,10 @@ resources:
     url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
   - type: js
     url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
+  - type: module
+    url: /community_plugin/lovelace-state-switch/state-switch.js
+  - type: module
+    url: /community_plugin/decluttering-card/decluttering-card.js
+
 title: Home
 views: !include_dir_list lovelace/
