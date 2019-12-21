@@ -66,10 +66,15 @@ google_assistant:
     vacuum.xiaomi_vacuum_cleaner:
       expose: true
       name: "Alfred"
+      aliases:
+        - "Vacuum"
+        - "Vacuum Cleaner"
       room: "Living Room"
     switch.playstation_4:
       expose: true
       name: "PlayStation 4"
+      aliases:
+        - "PS4"
       room: "Living Room"
 
 nest:
