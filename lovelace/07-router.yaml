@@ -17,63 +17,68 @@ cards:
     show_header_toggle: false
     title: Router Overview
     type: entities
-  - cards:
-      - cards:
-          - entities:
-              - sensor.router_ingress_wan
-            hours_to_show: 1
-            line_color: red
-            name: Ingress
-            points_per_hour: 12
-            type: 'custom:mini-graph-card'
-          - entities:
-              - sensor.router_egress_wan
-            hours_to_show: 1
-            line_color: blue
-            name: Egress
-            points_per_hour: 12
-            type: 'custom:mini-graph-card'
-        type: horizontal-stack
-    title: WAN (eth1.2)
-    type: vertical-stack
-  - cards:
-      - cards:
-          - entities:
-              - sensor.router_ingress_lan
-            hours_to_show: 1
-            line_color: red
-            name: Ingress
-            points_per_hour: 12
-            type: 'custom:mini-graph-card'
-          - entities:
-              - sensor.router_egress_lan
-            hours_to_show: 1
-            line_color: blue
-            name: Egress
-            points_per_hour: 12
-            type: 'custom:mini-graph-card'
-        type: horizontal-stack
-    title: LAN (br-lan)
-    type: vertical-stack
-  - cards:
-      - cards:
-          - entities:
-              - sensor.router_ingress_iot
-            hours_to_show: 1
-            line_color: red
-            name: Ingress
-            points_per_hour: 12
-            type: 'custom:mini-graph-card'
-          - entities:
-              - sensor.router_egress_iot
-            hours_to_show: 1
-            line_color: blue
-            name: Egress
-            points_per_hour: 12
-            type: 'custom:mini-graph-card'
-        type: horizontal-stack
-    title: IoT (br-iot)
-    type: vertical-stack
+  - type: vertical-stack
+    title: Network Interfaces
+    cards:
+      - type: entities
+        entities:
+          - entity: input_select.router_selected_interface
+            name: "Interface:"
+      - type: custom:state-switch
+        entity: input_select.router_selected_interface
+        default: "WAN (eth1.2)"
+        states:
+          WAN (eth1.2):
+            type: horizontal-stack
+            cards:
+              - type: 'custom:mini-graph-card'
+                entities:
+                  - sensor.router_ingress_wan
+                hours_to_show: 1
+                line_color: red
+                name: Ingress
+                points_per_hour: 12
+              - type: 'custom:mini-graph-card'
+                entities:
+                  - sensor.router_egress_wan
+                hours_to_show: 1
+                line_color: blue
+                name: Egress
+                points_per_hour: 12
+          LAN (br-lan):
+            type: horizontal-stack
+            cards:
+              - type: 'custom:mini-graph-card'
+                entities:
+                  - sensor.router_ingress_lan
+                hours_to_show: 1
+                line_color: red
+                name: Ingress
+                points_per_hour: 12
+              - type: 'custom:mini-graph-card'
+                entities:
+                  - sensor.router_egress_lan
+                hours_to_show: 1
+                line_color: blue
+                name: Egress
+                points_per_hour: 12
+          IoT (br-iot):
+            type: horizontal-stack
+            cards:
+              - type: 'custom:mini-graph-card'
+                entities:
+                  - sensor.router_ingress_iot
+                hours_to_show: 1
+                line_color: red
+                name: Ingress
+                points_per_hour: 12
+              - type: 'custom:mini-graph-card'
+                entities:
+                  - sensor.router_egress_iot
+                hours_to_show: 1
+                line_color: blue
+                name: Egress
+                points_per_hour: 12
   - cards:
       - cards:
           - entities:
