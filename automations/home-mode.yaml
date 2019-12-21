@@ -58,8 +58,6 @@
   trigger:
     platform: state
     entity_id: input_select.home_mode
-    platform: state
-    entity_id: device_tracker.paulus, device_tracker.anne_therese
     to: "Party"
     for: "10:00:00"
   action:
