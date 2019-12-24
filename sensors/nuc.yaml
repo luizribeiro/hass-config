@@ -12,6 +12,14 @@
   icon: "mdi:thermometer"
   value_template: "{{ (value.split(':')[1][:-1] | float) | round(1) }}"
 
+# FAN Speed
+- platform: mqtt
+  name: "NUC FAN Speed"
+  state_topic: "collectd/nuc/sensors-nct6776-isa-0a00/fanspeed-fan2"
+  unit_of_measurement: "RPM"
+  icon: "mdi:fan"
+  value_template: "{{ value.split(':')[1][:-1] | int }}"
+
 # CPU Frequency
 - platform: mqtt
   name: "NUC CPU0 Frequency"
