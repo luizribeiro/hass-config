@@ -115,6 +115,7 @@
 - platform: mqtt
   name: "Router wlan0 Num Stations"
   state_topic: "collectd/router/iwinfo-wlan0/stations"
+  unit_of_measurement: "devices"
   icon: "mdi:devices"
   value_template: "{{ value.split(':')[1][:-1] | int }}"
 
@@ -146,6 +147,7 @@
 - platform: mqtt
   name: "Router wlan1 Num Stations"
   state_topic: "collectd/router/iwinfo-wlan1/stations"
+  unit_of_measurement: "devices"
   icon: "mdi:devices"
   value_template: "{{ value.split(':')[1][:-1] | int }}"
 
@@ -177,5 +179,6 @@
 - platform: mqtt
   name: "Router wlan-iot Num Stations"
   state_topic: "collectd/router/iwinfo-wlan-iot/stations"
+  unit_of_measurement: "devices"
   icon: "mdi:devices"
   value_template: "{{ value.split(':')[1][:-1] | int }}"
