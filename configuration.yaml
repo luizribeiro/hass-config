@@ -284,3 +284,6 @@ input_select:
     icon: mdi:access-point-network
 
 pi_hole:
+  host: "nuc.thepromisedlan.club:443"
+  location: pihole
+  ssl: true
