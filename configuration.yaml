@@ -80,6 +80,7 @@ google_assistant:
       expose: true
       name: "Hackintosh"
       aliases:
+        - "Hackintosh"
         - "Grissom"
       room: "Living Room"
 
