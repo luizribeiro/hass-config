@@ -83,6 +83,14 @@ google_assistant:
         - "Hackintosh"
         - "Grissom"
       room: "Living Room"
+    switch.zvox_power:
+      expose: true
+      name: "ZVOX"
+      aliases:
+        - "ZVOX"
+        - "ZVOX Speaker"
+        - "Soundbar"
+      room: "Living Room"
 
 nest:
   client_id: !secret nest_client_id
