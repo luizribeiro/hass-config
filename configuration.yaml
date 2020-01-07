@@ -296,3 +296,8 @@ pi_hole:
   host: "nuc.thepromisedlan.club:443"
   location: pihole
   ssl: true
+
+counter:
+  num_vacuum_retries_today:
+    initial: 0
+    step: 1

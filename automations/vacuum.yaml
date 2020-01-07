@@ -23,3 +23,29 @@
     - service: vacuum.start
       data:
         entity_id: vacuum.xiaomi_vacuum_cleaner
+
+- alias: "Retry on Vacuum errors"
+  trigger:
+    platform: state
+    entity_id: vacuum.xiaomi_vacuum_cleaner
+    to: error
+  condition:
+    condition: numeric_state
+    entity_id: counter.num_vacuum_retries_today
+    below: 2
+  action:
+    - service: counter.increment
+      data:
+        entity_id: counter.num_vacuum_retries_today
+    - service: vacuum.start
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+
+- alias: "Reset Vacuum retry counter"
+  trigger:
+    platform: time
+    at: "00:00:00"
+  action:
+    - service: counter.reset
+      data:
+        entity_id: counter.num_vacuum_retries_today
