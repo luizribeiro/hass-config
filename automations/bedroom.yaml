@@ -1,0 +1,45 @@
+- alias: Wake-up routine for bedroom lights
+  trigger:
+    platform: time
+    at: "6:50:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+      - condition: state
+        entity_id: input_select.home_mode
+        state: 'Home'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.left_bedroom_lamp, light.right_bedroom_lamp
+        profile: relax
+        transition: 600
+
+- alias: Wake-up routine for Spotify
+  trigger:
+    platform: time
+    at: "7:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+      - condition: state
+        entity_id: input_select.home_mode
+        state: 'Home'
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.bedroom_speaker
+        volume_level: 0.4
+    - service: spotcast.start
+      data:
+        entity_id: media_player.bedroom_speaker
+        # Wake Up Gently: https://open.spotify.com/playlist/37i9dQZF1DX7cZxYLqLUJl
+        uri: 'spotify:playlist:37i9dQZF1DX7cZxYLqLUJl'
+        transfer_playback: 'no'
+        random_song: 'yes'
