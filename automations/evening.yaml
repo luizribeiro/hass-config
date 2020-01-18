@@ -1,0 +1,18 @@
+- alias: Evening routine
+  trigger:
+    platform: time
+    at: "10:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.workday_tomorrow
+        state: 'on'
+      - condition: state
+        entity_id: input_select.home_mode
+        state: 'Home'
+  action:
+    - service: tts.google_translate_say
+      data:
+        entity_id: media_player.whole_house
+        message: "It's time to brush your teeth and go to bed. Sleep tight!"
