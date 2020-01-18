@@ -266,7 +266,12 @@ binary_sensor:
       grissom_status:
         value_template: "{{ (states('sensor.grissom_seconds_since_last_update') | int) < 60 }}"
   - platform: workday
+    name: workday_today
     country: US
+  - platform: workday
+    name: workday_tomorrow
+    country: US
+    days_offset: 1
 
 input_select:
   home_mode:

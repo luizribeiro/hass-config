@@ -6,7 +6,7 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: binary_sensor.workday_sensor
+        entity_id: binary_sensor.workday_today
         state: 'on'
       - condition: state
         entity_id: input_select.home_mode
@@ -26,7 +26,7 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: binary_sensor.workday_sensor
+        entity_id: binary_sensor.workday_today
         state: 'on'
       - condition: state
         entity_id: input_select.home_mode
