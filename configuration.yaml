@@ -55,7 +55,7 @@ google_assistant:
   report_state: true
   expose_by_default: false
   entity_config:
-    light.christmas_tree:
+    light.desk_lamp:
       expose: true
       room: "Living Room"
     light.corner_lamp:
@@ -134,7 +134,7 @@ homeassistant:
 
 light:
   - platform: switch
-    name: "Christmas Tree"
+    name: "Desk Lamp"
     entity_id: switch.bacon
   - platform: switch
     name: "Corner Lamp"
