@@ -64,7 +64,7 @@ cards:
             entity_id: switch.zvox_volume_up
         type: entity-button
     type: horizontal-stack
-  - entity: media_player.lg_webos_smart_tv
+  - entity: media_player.webos_living_room_tv
     hide:
       controls: true
       volume: true

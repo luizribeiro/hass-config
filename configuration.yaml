@@ -233,25 +233,23 @@ switch:
         command_off: 'JgBYAAABKpIVEBUQFjQVEBYQFRAVEBYPFjQVNRUQFjQVNRQ1FTUVNRUQFRAWEBU0FhAVEBUQFRAWNBU1FTQVERU0FTUWNBU1FQAFMgABK0cVAAxOAAErRxUADQU='
 
 
-media_player:
-  - platform: webostv
-    host: 'living-room-tv'
-    filename: webostv.conf
-    timeout: 60
-    turn_on_action:
-      service: wake_on_lan.send_magic_packet
-      data:
-        mac: !secret webostv_mac
-    customize:
-      sources:
-        - Chromecast
-        - Spotify
-        - Netflix
-        - Hulu
-        - PlayStation 4
-        - Nintendo Switch
-        - YouTube
-        - Optimum
+webostv:
+  name: "webOS Living Room TV"
+  host: 'living-room-tv'
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: !secret webostv_mac
+  customize:
+    sources:
+      - Chromecast
+      - Spotify
+      - Netflix
+      - Hulu
+      - PlayStation 4
+      - Nintendo Switch
+      - YouTube
+      - Optimum
 
 sensor: !include_dir_merge_list sensors/
 
