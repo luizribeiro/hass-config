@@ -1,0 +1,3 @@
+[submodule "dependencies/spotcast"]
+	path = dependencies/spotcast
+	url = https://github.com/fondberg/spotcast
