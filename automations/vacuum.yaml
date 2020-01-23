@@ -20,7 +20,7 @@
       data_template:
         entity_id: vacuum.xiaomi_vacuum_cleaner
         # only run in max fan speed on Mondays
-        fan_speed: "{{'Max' if now().weekday() == 1 else 'Balanced'}}"
+        fan_speed: "{{'Max' if now().weekday() == 0 else 'Balanced'}}"
     - service: vacuum.start
       data:
         entity_id: vacuum.xiaomi_vacuum_cleaner
