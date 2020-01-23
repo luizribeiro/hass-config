@@ -15,3 +15,14 @@
   action:
     service: switch.turn_on
     entity_id: switch.zvox_power
+
+- alias: Switch to Chromecast when PS4 turns off
+  trigger:
+    platform: state
+    entity_id: switch.playstation_4
+    to: 'off'
+  action:
+    service: media_player.select_source
+    data:
+      entity_id: media_player.webos_living_room_tv
+      source: Chromecast
