@@ -30,6 +30,7 @@
     platform: state
     entity_id: vacuum.xiaomi_vacuum_cleaner
     to: error
+    for: "00:01:00"
   condition:
     condition: numeric_state
     entity_id: counter.num_vacuum_retries_today
