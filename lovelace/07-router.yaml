@@ -8,6 +8,8 @@ cards:
         name: CPU Usage
       - entity: sensor.router_memory_free
         name: Memory Free
+      - entity: sensor.router_disk_free
+        name: Disk Free
       - entity: sensor.router_wlan0_num_stations
         name: The Promised LAN 5GHz Devices
       - entity: sensor.router_wlan1_num_stations
