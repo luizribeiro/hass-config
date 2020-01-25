@@ -50,3 +50,12 @@
     - service: counter.reset
       data:
         entity_id: counter.num_vacuum_retries_today
+
+- alias: "Automatically dock the Vacuum"
+  trigger:
+    platform: time
+    at: "18:30:00"
+  action:
+    - service: vacuum.return_to_base
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
