@@ -13,6 +13,10 @@
   trigger:
     platform: time
     at: "22:30:00"
+  condition:
+    condition: state
+    entity_id: binary_sensor.workday_tomorrow
+    state: 'on'
   action:
     - service: light.turn_off
       entity_id: light.living_room
