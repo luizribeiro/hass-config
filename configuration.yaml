@@ -126,11 +126,6 @@ homeassistant:
       hidden: true
     switch.012002845ccf7f596568:
       hidden: true
-    # Rename 
-    sensor.network_throughput_in_eno1:
-      friendly_name: "Ingress (eno1)"
-    sensor.network_throughput_out_eno1:
-      friendly_name: "Egress (eno1)"
 
 light:
   - platform: switch
