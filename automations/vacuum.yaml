@@ -55,7 +55,7 @@
 - alias: "Automatically dock the Vacuum"
   trigger:
     platform: time
-    at: "18:30:00"
+    at: "19:00:00"
   action:
     - service: vacuum.return_to_base
       data:
