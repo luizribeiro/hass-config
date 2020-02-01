@@ -16,6 +16,8 @@ cards:
         name: The Promised LAN 2.4GHz Devices
       - entity: sensor.router_wlan_iot_num_stations
         name: IoT 2.4GHz Devices
+      - entity: sensor.router_last_boot
+        name: Last Boot
     show_header_toggle: false
     title: Router Overview
     type: entities
