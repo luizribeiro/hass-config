@@ -13,6 +13,23 @@ logger:
     btlewrap: debug
     bluepy: debug
 
+influxdb:
+  host: 127.0.0.1
+  port: 8086
+  database: home-assistant
+  include:
+    entities:
+      - sensor.bonsai_battery
+      - sensor.bonsai_conductivity
+      - sensor.bonsai_light_intensity
+      - sensor.bonsai_moisture
+      - sensor.bonsai_temperature
+      - sensor.entryway_thermostat_humidity
+      - sensor.entryway_thermostat_target
+      - sensor.entryway_thermostat_temperature
+      - sensor.outside_humidity
+      - sensor.outside_temperature
+
 frontend:
   themes: !include_dir_merge_named themes
 
