@@ -1,0 +1,13 @@
+- alias: Turn off TVs when we leave the house
+  trigger:
+    platform: state
+    entity_id: input_select.home_mode
+    to: Away
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.ir_living_room_tv
+    - service: media_player.turn_off
+      data:
+        # FIXME: this doesn't really work :(
+        entity_id: media_player.bedroom_tv
