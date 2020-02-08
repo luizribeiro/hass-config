@@ -1,7 +1,11 @@
-- alias: "Sync Home Mode with Nest"
+- alias: "Automatically set Home mode"
   trigger:
-    platform: state
-    entity_id: binary_sensor.home_away
+    - platform: state
+      entity_id: binary_sensor.home_away
+    - platform: state
+      entity_id: person.luiz
+    - platform: state
+      entity_id: person.karin
   condition:
     condition: template
     value_template: "{{ not is_state('input_select.home_mode', 'Guests') }}"
@@ -9,7 +13,16 @@
     - service: input_select.select_option
       data_template:
         entity_id: input_select.home_mode
-        option: "{{ 'Home' if states('binary_sensor.home_away') == 'off' else 'Away' }}"
+        option: >
+          {%
+            if is_state('binary_sensor.home_away', 'off') or
+              is_state('person.luiz', 'home') or
+              is_state('person.karin', 'home')
+          %}
+            Home
+          {% else %}
+            Away
+          {% endif %}
 
 - alias: "Disable Nest Home/Away when guests are staying"
   trigger:
