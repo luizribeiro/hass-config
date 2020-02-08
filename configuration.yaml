@@ -42,6 +42,11 @@ ios:
 
 device_tracker:
 
+notify:
+  - name: Facebook
+    platform: facebook
+    page_access_token: !secret fb_page_access_token
+
 history:
   use_include_order: true
   include: !include history.yaml
