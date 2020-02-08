@@ -40,6 +40,8 @@ api:
 
 ios:
 
+device_tracker:
+
 history:
   use_include_order: true
   include: !include history.yaml
