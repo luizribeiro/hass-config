@@ -12,9 +12,13 @@
         entity_id: input_select.home_mode
         state: 'Home'
   action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.all_speakers
+        volume_level: 0.5
     - service: tts.google_translate_say
       data:
-        entity_id: media_player.whole_house
+        entity_id: media_player.all_speakers
         message: "It's time to brush your teeth and go to bed. Sleep tight!"
     - service: light.turn_on
       data:
