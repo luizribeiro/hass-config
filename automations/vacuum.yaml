@@ -60,3 +60,21 @@
     - service: vacuum.return_to_base
       data:
         entity_id: vacuum.xiaomi_vacuum_cleaner
+
+- alias: "Warn us when Vacuum is stuck"
+  trigger:
+    platform: state
+    entity_id: vacuum.xiaomi_vacuum_cleaner
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ (as_timestamp(now()) - as_timestamp(state_attr("automation.ice_overnight_me",
+          "last_triggered") | default(0)) | int > 60*60*12)}}'
+      - condition: template
+        value_template: '{{ "move robot" in (state_attr("vacuum.xiaomi_vacuum_cleaner", "error") or "") }}'
+  action:
+    - service: notify.facebook
+      data:
+        message: 'The vacuum seems to be stuck. Can you move it, please?'
+        target: !secret phone_numbers
