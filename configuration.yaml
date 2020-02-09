@@ -121,12 +121,6 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
-tuya:
-  username: !secret tuya_username
-  password: !secret tuya_password
-  country_code: 1
-  platform: jinvoo_smart
-
 tplink:
   discovery: false
   switch:
