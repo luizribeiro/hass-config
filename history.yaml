@@ -20,3 +20,8 @@ entities:
   - sensor.entryway_thermostat_humidity
   - sensor.outside_temperature
   - sensor.outside_humidity
+  # home/away sensors
+  - binary_sensor.home_away
+  - person.luiz
+  - person.karin
+  - input_select.home_mode
