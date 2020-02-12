@@ -1,3 +1,4 @@
+---
 - alias: Turn off TVs when we leave the house
   trigger:
     platform: state

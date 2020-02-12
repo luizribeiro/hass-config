@@ -1,3 +1,4 @@
+---
 - alias: "Start the Vacuum"
   trigger:
     platform: time

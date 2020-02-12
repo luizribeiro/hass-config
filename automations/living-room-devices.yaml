@@ -1,3 +1,4 @@
+---
 - alias: Turn on ZVOX when TV turns on
   trigger:
     platform: state

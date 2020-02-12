@@ -1,3 +1,4 @@
+---
 - alias: "Unlock door from iOS"
   hide_entity: true
   initial_state: true

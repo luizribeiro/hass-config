@@ -1,3 +1,4 @@
+---
 - alias: "Automatically set Home mode"
   trigger:
     - platform: state

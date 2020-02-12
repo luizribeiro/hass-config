@@ -1,3 +1,4 @@
+---
 - platform: rest
   resource: http://iot-rockrobo/api/map/latest
   name: valetudo_map

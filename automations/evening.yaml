@@ -1,3 +1,4 @@
+---
 - alias: Evening routine
   trigger:
     platform: time

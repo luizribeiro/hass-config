@@ -1,3 +1,4 @@
+---
 - platform: miflora
   mac: !secret miflora_bonsai_mac
   name: "Bonsai"

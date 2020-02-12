@@ -1,3 +1,4 @@
+---
 - alias: "Turn on lights before sunset"
   trigger:
     platform: sun

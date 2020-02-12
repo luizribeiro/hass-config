@@ -1,3 +1,4 @@
+---
 # CPU Overview
 - platform: mqtt
   name: "Router CPU Usage"

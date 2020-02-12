@@ -1,3 +1,4 @@
+---
 - alias: Wake-up routine for bedroom lights
   trigger:
     platform: time
