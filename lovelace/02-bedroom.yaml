@@ -1,12 +1,12 @@
 title: Bedroom
 path: bedroom
-icon: 'mdi:bed-queen-outline'
+icon: "mdi:bed-queen-outline"
 panel: false
 badges: []
 cards:
   - entities:
       - entity: switch.bedroom_tv
-        icon: 'mdi:television'
+        icon: "mdi:television"
     title: Devices
     type: entities
   - entities:
@@ -19,13 +19,13 @@ cards:
     type: entities
   - entities:
       - entity: scene.relax
-        icon: 'mdi:palm-tree'
+        icon: "mdi:palm-tree"
       - entity: scene.night
-        icon: 'mdi:weather-night'
+        icon: "mdi:weather-night"
     show_header_toggle: false
     title: Scenes
     type: entities
   - artwork: cover
     entity: media_player.bedroom_tv
     name: Chromecast
-    type: 'custom:mini-media-player'
+    type: "custom:mini-media-player"

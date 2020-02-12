@@ -1,13 +1,13 @@
 title: Vacuum
 path: vacuum
-icon: 'mdi:robot-vacuum-variant'
+icon: "mdi:robot-vacuum-variant"
 badges: []
 cards:
   - cards:
       - buttons: true
         entity: vacuum.xiaomi_vacuum_cleaner
         name: Xiaomi Vacuum
-        type: 'custom:xiaomi-vacuum-card'
+        type: "custom:xiaomi-vacuum-card"
       - crop:
           bottom: 70
           left: 20
@@ -16,7 +16,7 @@ cards:
         entity: sensor.valetudo_map
         min_height: 250
         rotate: 0
-        type: 'custom:valetudo-map-card'
+        type: "custom:valetudo-map-card"
       - entities:
           - entity: vacuum.xiaomi_vacuum_cleaner
         hours_to_show: 24

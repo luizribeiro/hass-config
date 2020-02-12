@@ -6,5 +6,5 @@
     - path
     - charger
     - robot
-  value_template: 'OK'
+  value_template: "OK"
   scan_interval: 60

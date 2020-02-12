@@ -1,6 +1,6 @@
 title: Router
 path: router
-icon: 'mdi:router-wireless'
+icon: "mdi:router-wireless"
 badges: []
 cards:
   - entities:
@@ -35,14 +35,14 @@ cards:
           WAN (eth1.2):
             type: horizontal-stack
             cards:
-              - type: 'custom:mini-graph-card'
+              - type: "custom:mini-graph-card"
                 entities:
                   - sensor.router_ingress_wan
                 hours_to_show: 1
                 line_color: red
                 name: Ingress
                 points_per_hour: 12
-              - type: 'custom:mini-graph-card'
+              - type: "custom:mini-graph-card"
                 entities:
                   - sensor.router_egress_wan
                 hours_to_show: 1
@@ -52,14 +52,14 @@ cards:
           LAN (br-lan):
             type: horizontal-stack
             cards:
-              - type: 'custom:mini-graph-card'
+              - type: "custom:mini-graph-card"
                 entities:
                   - sensor.router_ingress_lan
                 hours_to_show: 1
                 line_color: red
                 name: Ingress
                 points_per_hour: 12
-              - type: 'custom:mini-graph-card'
+              - type: "custom:mini-graph-card"
                 entities:
                   - sensor.router_egress_lan
                 hours_to_show: 1
@@ -69,14 +69,14 @@ cards:
           IoT (br-iot):
             type: horizontal-stack
             cards:
-              - type: 'custom:mini-graph-card'
+              - type: "custom:mini-graph-card"
                 entities:
                   - sensor.router_ingress_iot
                 hours_to_show: 1
                 line_color: red
                 name: Ingress
                 points_per_hour: 12
-              - type: 'custom:mini-graph-card'
+              - type: "custom:mini-graph-card"
                 entities:
                   - sensor.router_egress_iot
                 hours_to_show: 1
@@ -105,14 +105,14 @@ cards:
                     line_color: blue
                     name: Bitrate
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
                   - entities:
                       - sensor.router_wlan0_signal_quality
                     hours_to_show: 1
                     line_color: orange
                     name: Signal Quality
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
               - type: horizontal-stack
                 cards:
                   - entities:
@@ -121,14 +121,14 @@ cards:
                     line_color: green
                     name: Signal Power
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
                   - entities:
                       - sensor.router_wlan0_signal_noise
                     hours_to_show: 1
                     line_color: red
                     name: Signal Noise
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
           The Promised LAN (2.4GHz):
             type: vertical-stack
             cards:
@@ -140,14 +140,14 @@ cards:
                     line_color: blue
                     name: Bitrate
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
                   - entities:
                       - sensor.router_wlan1_signal_quality
                     hours_to_show: 1
                     line_color: orange
                     name: Signal Quality
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
               - type: horizontal-stack
                 cards:
                   - entities:
@@ -156,14 +156,14 @@ cards:
                     line_color: green
                     name: Signal Power
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
                   - entities:
                       - sensor.router_wlan1_signal_noise
                     hours_to_show: 1
                     line_color: red
                     name: Signal Noise
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
           IoT (2.4GHz):
             type: vertical-stack
             cards:
@@ -175,14 +175,14 @@ cards:
                     line_color: blue
                     name: Bitrate
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
                   - entities:
                       - sensor.router_wlan_iot_signal_quality
                     hours_to_show: 1
                     line_color: orange
                     name: Signal Quality
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
               - type: horizontal-stack
                 cards:
                   - entities:
@@ -191,11 +191,11 @@ cards:
                     line_color: green
                     name: Signal Power
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"
                   - entities:
                       - sensor.router_wlan_iot_signal_noise
                     hours_to_show: 1
                     line_color: red
                     name: Signal Noise
                     points_per_hour: 12
-                    type: 'custom:mini-graph-card'
+                    type: "custom:mini-graph-card"

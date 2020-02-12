@@ -2,7 +2,7 @@
   trigger:
     platform: state
     entity_id: binary_sensor.living_room_tv_status
-    to: 'on'
+    to: "on"
   action:
     service: switch.turn_on
     entity_id: switch.zvox_power
@@ -11,7 +11,7 @@
   trigger:
     platform: state
     entity_id: switch.playstation_4
-    to: 'on'
+    to: "on"
   action:
     service: switch.turn_on
     entity_id: switch.zvox_power
@@ -20,7 +20,7 @@
   trigger:
     platform: state
     entity_id: switch.playstation_4
-    to: 'off'
+    to: "off"
   action:
     service: media_player.select_source
     data:

@@ -1,6 +1,6 @@
 title: Settings
 path: settings
-icon: 'mdi:wrench'
+icon: "mdi:wrench"
 badges: []
 cards:
   - entities:

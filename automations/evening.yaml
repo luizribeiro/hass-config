@@ -7,10 +7,10 @@
     conditions:
       - condition: state
         entity_id: binary_sensor.workday_tomorrow
-        state: 'on'
+        state: "on"
       - condition: state
         entity_id: input_select.home_mode
-        state: 'Home'
+        state: "Home"
   action:
     - service: media_player.volume_set
       data:

@@ -1,6 +1,6 @@
 title: Grissom
 path: grissom
-icon: 'mdi:desktop-mac'
+icon: "mdi:desktop-mac"
 panel: false
 badges: []
 cards:
@@ -28,7 +28,7 @@ cards:
             line_color: orange
             name: Usage
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
         type: horizontal-stack
     title: CPU Overview
     type: vertical-stack
@@ -40,14 +40,14 @@ cards:
             line_color: green
             name: Free
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
           - entities:
               - sensor.grissom_memory_wired
             hours_to_show: 1
             line_color: red
             name: Wired
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
         type: horizontal-stack
       - cards:
           - entities:
@@ -56,14 +56,14 @@ cards:
             line_color: blue
             name: Active
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
           - entities:
               - sensor.grissom_memory_inactive
             hours_to_show: 1
             line_color: orange
             name: Inactive
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
         type: horizontal-stack
     title: Memory
     type: vertical-stack
@@ -74,13 +74,13 @@ cards:
         line_color: red
         name: Ingress
         points_per_hour: 12
-        type: 'custom:mini-graph-card'
+        type: "custom:mini-graph-card"
       - entities:
           - sensor.grissom_egress_en1
         hours_to_show: 1
         line_color: blue
         name: Egress
         points_per_hour: 12
-        type: 'custom:mini-graph-card'
+        type: "custom:mini-graph-card"
     title: Network
     type: horizontal-stack

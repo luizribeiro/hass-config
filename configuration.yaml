@@ -124,11 +124,11 @@ nest:
 tplink:
   discovery: false
   switch:
-    - host: 'iot-avocado'
-    - host: 'iot-bacon'
-    - host: 'iot-popcorn'
+    - host: "iot-avocado"
+    - host: "iot-bacon"
+    - host: "iot-popcorn"
 
-homeassistant: 
+homeassistant:
   auth_providers:
     - type: homeassistant
     - type: trusted_networks
@@ -168,14 +168,14 @@ august:
 
 vacuum:
   - platform: xiaomi_miio
-    host: 'iot-rockrobo'
+    host: "iot-rockrobo"
     token: !secret roborock_token
 
 switch:
   - platform: template
     switches:
       living_room_tv:
-        friendly_name: 'Living Room TV'
+        friendly_name: "Living Room TV"
         value_template: "{{ not is_state('binary_sensor.living_room_tv_status', 'off') }}"
         icon_template: "mdi:television"
         turn_on:
@@ -185,7 +185,7 @@ switch:
           service: switch.turn_off
           entity_id: switch.ir_living_room_tv
       playstation_4:
-        friendly_name: 'PlayStation 4'
+        friendly_name: "PlayStation 4"
         availability_template: "{{ not is_state('media_player.playstation_4', 'unknown') }}"
         value_template: "{{ not is_state('media_player.playstation_4', 'standby') }}"
         icon_template: "mdi:playstation"
@@ -198,7 +198,7 @@ switch:
           data:
             entity_id: media_player.playstation_4
       bedroom_tv:
-        friendly_name: 'Bedroom TV'
+        friendly_name: "Bedroom TV"
         value_template: "{{ not is_state('media_player.bedroom_tv', 'off') }}"
         icon_template: "mdi:television"
         turn_on:
@@ -210,7 +210,7 @@ switch:
           data:
             entity_id: media_player.bedroom_tv
       grissom:
-        friendly_name: 'Grissom'
+        friendly_name: "Grissom"
         value_template: "{{ not is_state('binary_sensor.grissom_status', 'off') }}"
         icon_template: "mdi:desktop-mac"
         turn_on:
@@ -224,7 +224,7 @@ switch:
             mac: !secret grissom_mac
   - platform: broadlink
     type: rm2_pro_plus
-    host: 'iot-rmpro'
+    host: "iot-rmpro"
     mac: !secret broadlink_mac
     switches:
       zvox_volume_up:
@@ -242,13 +242,12 @@ switch:
         command_off: "JgBQAAABKJMSEhISEhISEhISEhISEhISEjcSEhI3EhISNxI3EjcSNxI3EjcSEhI3EjcSEhISEhISEhISEjcSEhISEjcSNxI3EgAFZAABKEoSAAxWDQUAAAAAAAA="
       ir_living_room_tv:
         friendly_name: "Living Room TV"
-        command_on: 'JgBYAAABIJISExETETcSEhISEhQQFBETETcROBESEjcRNhM1EjcTNRMTERISNxEUERMSExE2EjYSNhM2EhIROBE3ETcREhITEgAFGwABH0oSAAwzAAEfShEADQU='
-        command_off: 'JgBYAAABKpIVEBUQFjQVEBYQFRAVEBYPFjQVNRUQFjQVNRQ1FTUVNRUQFRAWEBU0FhAVEBUQFRAWNBU1FTQVERU0FTUWNBU1FQAFMgABK0cVAAxOAAErRxUADQU='
-
+        command_on: "JgBYAAABIJISExETETcSEhISEhQQFBETETcROBESEjcRNhM1EjcTNRMTERISNxEUERMSExE2EjYSNhM2EhIROBE3ETcREhITEgAFGwABH0oSAAwzAAEfShEADQU="
+        command_off: "JgBYAAABKpIVEBUQFjQVEBYQFRAVEBYPFjQVNRUQFjQVNRQ1FTUVNRUQFRAWEBU0FhAVEBUQFRAWNBU1FTQVERU0FTUWNBU1FQAFMgABK0cVAAxOAAErRxUADQU="
 
 webostv:
   name: "webOS Living Room TV"
-  host: 'living-room-tv'
+  host: "living-room-tv"
   turn_on_action:
     service: wake_on_lan.send_magic_packet
     data:
@@ -269,7 +268,7 @@ sensor: !include_dir_merge_list sensors/
 binary_sensor:
   - platform: ping
     name: living_room_tv_status
-    host: 'living-room-tv'
+    host: "living-room-tv"
     scan_interval: 1
     count: 1
   - platform: template

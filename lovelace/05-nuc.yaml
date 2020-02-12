@@ -1,6 +1,6 @@
 title: NUC
 path: nuc
-icon: 'mdi:server-network'
+icon: "mdi:server-network"
 panel: false
 badges: []
 cards:
@@ -30,14 +30,14 @@ cards:
             line_color: orange
             name: Usage
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
           - entities:
               - sensor.nuc_cpu_temperature
             hours_to_show: 1
             line_color: orange
             name: Temperature
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
         type: horizontal-stack
     title: CPU Overview
     type: vertical-stack
@@ -49,14 +49,14 @@ cards:
             line_color: green
             name: Free
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
           - entities:
               - sensor.nuc_memory_used
             hours_to_show: 1
             line_color: red
             name: Used
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
         type: horizontal-stack
       - cards:
           - entities:
@@ -65,14 +65,14 @@ cards:
             line_color: blue
             name: Page Cache
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
           - entities:
               - sensor.nuc_memory_buffered
             hours_to_show: 1
             line_color: orange
             name: Buffer Cache
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
         type: horizontal-stack
     title: Memory
     type: vertical-stack
@@ -84,14 +84,14 @@ cards:
             line_color: gray
             name: Core 0
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
           - entities:
               - sensor.nuc_cpu1_frequency
             hours_to_show: 1
             line_color: gray
             name: Core 1
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
         type: horizontal-stack
       - cards:
           - entities:
@@ -100,14 +100,14 @@ cards:
             line_color: gray
             name: Core 2
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
           - entities:
               - sensor.nuc_cpu3_frequency
             hours_to_show: 1
             line_color: gray
             name: Core 3
             points_per_hour: 12
-            type: 'custom:mini-graph-card'
+            type: "custom:mini-graph-card"
         type: horizontal-stack
     title: CPU Frequency
     type: vertical-stack
@@ -118,14 +118,14 @@ cards:
         line_color: red
         name: Ingress
         points_per_hour: 12
-        type: 'custom:mini-graph-card'
+        type: "custom:mini-graph-card"
       - entities:
           - sensor.nuc_egress_eno1
         hours_to_show: 1
         line_color: blue
         name: Egress
         points_per_hour: 12
-        type: 'custom:mini-graph-card'
+        type: "custom:mini-graph-card"
     title: Network
     type: horizontal-stack
   - entities:

@@ -7,10 +7,10 @@
     conditions:
       - condition: state
         entity_id: binary_sensor.workday_today
-        state: 'on'
+        state: "on"
       - condition: state
         entity_id: input_select.home_mode
-        state: 'Home'
+        state: "Home"
   action:
     - service: light.turn_on
       data:
@@ -27,10 +27,10 @@
     conditions:
       - condition: state
         entity_id: binary_sensor.workday_today
-        state: 'on'
+        state: "on"
       - condition: state
         entity_id: input_select.home_mode
-        state: 'Home'
+        state: "Home"
   action:
     - service: media_player.volume_set
       data:
@@ -40,9 +40,9 @@
       data:
         entity_id: media_player.bedroom_speaker
         # Wake Up Gently: https://open.spotify.com/playlist/37i9dQZF1DX7cZxYLqLUJl
-        uri: 'spotify:playlist:37i9dQZF1DX7cZxYLqLUJl'
-        transfer_playback: 'no'
-        random_song: 'yes'
+        uri: "spotify:playlist:37i9dQZF1DX7cZxYLqLUJl"
+        transfer_playback: "no"
+        random_song: "yes"
 
 - alias: Turn off bedroom lights when no one is home
   trigger:

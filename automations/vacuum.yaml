@@ -1,7 +1,7 @@
 - alias: "Start the Vacuum"
   trigger:
     platform: time
-    at: '16:00:00'
+    at: "16:00:00"
   condition:
     condition: and
     conditions:
@@ -14,7 +14,7 @@
           - fri
       - condition: state
         entity_id: input_select.home_mode
-        state: 'Away'
+        state: "Away"
   action:
     - service: vacuum.set_fan_speed
       data_template:
@@ -69,12 +69,13 @@
     condition: and
     conditions:
       - condition: template
-        value_template: '{{ (as_timestamp(now()) - as_timestamp(state_attr("automation.ice_overnight_me",
+        value_template:
+          '{{ (as_timestamp(now()) - as_timestamp(state_attr("automation.ice_overnight_me",
           "last_triggered") | default(0)) | int > 60*60*12)}}'
       - condition: template
         value_template: '{{ "move robot" in (state_attr("vacuum.xiaomi_vacuum_cleaner", "error") or "") }}'
   action:
     - service: notify.facebook
       data:
-        message: 'The vacuum seems to be stuck. Can you move it, please?'
+        message: "The vacuum seems to be stuck. Can you move it, please?"
         target: !secret phone_numbers

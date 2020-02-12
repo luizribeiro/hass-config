@@ -1,118 +1,118 @@
-- id: '1575775063219'
+- id: "1575775063219"
   name: Relax
   entities:
     light.left_bedroom_lamp:
       brightness: 144
       effect: none
       hs_color:
-      - 36.213
-      - 66.275
+        - 36.213
+        - 66.275
       rgb_color:
-      - 255
-      - 187
-      - 85
-      state: 'on'
+        - 255
+        - 187
+        - 85
+      state: "on"
       xy_color:
-      - 0.503
-      - 0.413
+        - 0.503
+        - 0.413
     light.left_nightstand:
       brightness: 144
       effect: none
       hs_color:
-      - 36.213
-      - 66.275
+        - 36.213
+        - 66.275
       rgb_color:
-      - 255
-      - 187
-      - 85
-      state: 'on'
+        - 255
+        - 187
+        - 85
+      state: "on"
       xy_color:
-      - 0.503
-      - 0.413
+        - 0.503
+        - 0.413
     light.right_bedroom_lamp:
       brightness: 144
       effect: none
       hs_color:
-      - 36.213
-      - 66.275
+        - 36.213
+        - 66.275
       rgb_color:
-      - 255
-      - 187
-      - 85
-      state: 'on'
+        - 255
+        - 187
+        - 85
+      state: "on"
       xy_color:
-      - 0.503
-      - 0.413
+        - 0.503
+        - 0.413
     light.right_nightstand:
       brightness: 144
       effect: none
       hs_color:
-      - 36.213
-      - 66.275
+        - 36.213
+        - 66.275
       rgb_color:
-      - 255
-      - 187
-      - 85
-      state: 'on'
+        - 255
+        - 187
+        - 85
+      state: "on"
       xy_color:
-      - 0.503
-      - 0.413
-- id: '1575775197784'
+        - 0.503
+        - 0.413
+- id: "1575775197784"
   name: Night
   entities:
     light.left_bedroom_lamp:
       brightness: 1
       effect: none
       hs_color:
-      - 33.767
-      - 84.314
+        - 33.767
+        - 84.314
       rgb_color:
-      - 255
-      - 160
-      - 39
-      state: 'on'
+        - 255
+        - 160
+        - 39
+      state: "on"
       xy_color:
-      - 0.561
-      - 0.404
+        - 0.561
+        - 0.404
     light.left_nightstand:
       brightness: 1
       effect: none
       hs_color:
-      - 33.767
-      - 84.314
+        - 33.767
+        - 84.314
       rgb_color:
-      - 255
-      - 160
-      - 39
-      state: 'on'
+        - 255
+        - 160
+        - 39
+      state: "on"
       xy_color:
-      - 0.561
-      - 0.404
+        - 0.561
+        - 0.404
     light.right_bedroom_lamp:
       brightness: 1
       effect: none
       hs_color:
-      - 33.767
-      - 84.314
+        - 33.767
+        - 84.314
       rgb_color:
-      - 255
-      - 160
-      - 39
-      state: 'on'
+        - 255
+        - 160
+        - 39
+      state: "on"
       xy_color:
-      - 0.561
-      - 0.404
+        - 0.561
+        - 0.404
     light.right_nightstand:
       brightness: 1
       effect: none
       hs_color:
-      - 33.767
-      - 84.314
+        - 33.767
+        - 84.314
       rgb_color:
-      - 255
-      - 160
-      - 39
-      state: 'on'
+        - 255
+        - 160
+        - 39
+      state: "on"
       xy_color:
-      - 0.561
-      - 0.404
+        - 0.561
+        - 0.404
