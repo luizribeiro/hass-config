@@ -69,12 +69,16 @@
   condition:
     condition: and
     conditions:
+      - condition: numeric_state
+        entity_id: counter.num_vacuum_retries_today
+        above: 1
       - condition: template
-        value_template:
-          '{{ (as_timestamp(now()) - as_timestamp(state_attr("automation.ice_overnight_me",
-          "last_triggered") | default(0)) | int > 60*60*12)}}'
-      - condition: template
-        value_template: '{{ "move robot" in (state_attr("vacuum.xiaomi_vacuum_cleaner", "error") or "") }}'
+        value_template: >-
+          {{
+            "move robot" in (
+              state_attr("vacuum.xiaomi_vacuum_cleaner", "error") or ""
+            )
+          }}
   action:
     - service: notify.facebook
       data:
