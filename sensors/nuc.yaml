@@ -5,7 +5,8 @@
   state_topic: "collectd/nuc/cpu/percent-idle"
   unit_of_measurement: "%"
   icon: "mdi:memory"
-  value_template: "{{ (100.0 - (value.split(':')[1][:-1] | float)) | round(1) }}"
+  value_template: >-
+    {{ (100.0 - (value.split(':')[1][:-1] | float)) | round(1) }}"
 - platform: mqtt
   name: "NUC CPU Temperature"
   state_topic: "collectd/nuc/sensors-coretemp-isa-0000/temperature-temp1"
@@ -27,25 +28,29 @@
   state_topic: "collectd/nuc/cpufreq-0/cpufreq"
   unit_of_measurement: "MHz"
   icon: "mdi:speedometer"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(0) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(0) }}"
 - platform: mqtt
   name: "NUC CPU1 Frequency"
   state_topic: "collectd/nuc/cpufreq-1/cpufreq"
   unit_of_measurement: "MHz"
   icon: "mdi:speedometer"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(0) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(0) }}"
 - platform: mqtt
   name: "NUC CPU2 Frequency"
   state_topic: "collectd/nuc/cpufreq-2/cpufreq"
   unit_of_measurement: "MHz"
   icon: "mdi:speedometer"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(0) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(0) }}
 - platform: mqtt
   name: "NUC CPU3 Frequency"
   state_topic: "collectd/nuc/cpufreq-3/cpufreq"
   unit_of_measurement: "MHz"
   icon: "mdi:speedometer"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(0) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(0) }}
 
 # Memory
 - platform: mqtt
@@ -53,25 +58,29 @@
   state_topic: "collectd/nuc/memory/memory-used"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "NUC Memory Buffered"
   state_topic: "collectd/nuc/memory/memory-buffered"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "NUC Memory Cached"
   state_topic: "collectd/nuc/memory/memory-cached"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "NUC Memory Free"
   state_topic: "collectd/nuc/memory/memory-free"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 
 # Disk
 - platform: mqtt
@@ -79,13 +88,15 @@
   state_topic: "collectd/nuc/df-root/df_complex-free"
   unit_of_measurement: "GB"
   icon: "mdi:harddisk"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000000.0) | round(2) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000000.0) | round(2) }}
 - platform: mqtt
   name: "NUC Disk Used"
   state_topic: "collectd/nuc/df-root/df_complex-used"
   unit_of_measurement: "GB"
   icon: "mdi:harddisk"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000000.0) | round(2) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000000.0) | round(2) }}
 
 # Network
 - platform: mqtt
@@ -99,7 +110,8 @@
   state_topic: "collectd/nuc/interface-eno1/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:upload-network"
-  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}
 
 # Uptime
 - platform: mqtt
@@ -107,5 +119,8 @@
   state_topic: "collectd/nuc/uptime/uptime"
   unit_of_measurement: "s"
   icon: "mdi:clock-outline"
-  value_template: "{{ (as_timestamp(now()) - (value.split(':')[1][:-1] | int)) | timestamp_local }}"
+  value_template: >-
+    {{
+      (as_timestamp(now()) - (value.split(':')[1][:-1] | int)) | timestamp_local
+    }}
   device_class: timestamp

@@ -40,7 +40,8 @@
     - service: spotcast.start
       data:
         entity_id: media_player.bedroom_speaker
-        # Wake Up Gently: https://open.spotify.com/playlist/37i9dQZF1DX7cZxYLqLUJl
+        # Wake Up Gently:
+        # https://open.spotify.com/playlist/37i9dQZF1DX7cZxYLqLUJl
         uri: "spotify:playlist:37i9dQZF1DX7cZxYLqLUJl"
         transfer_playback: "no"
         random_song: "yes"

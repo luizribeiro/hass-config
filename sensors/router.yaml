@@ -13,25 +13,29 @@
   state_topic: "collectd/router/memory/memory-used"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "Router Memory Buffered"
   state_topic: "collectd/router/memory/memory-buffered"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "Router Memory Cached"
   state_topic: "collectd/router/memory/memory-cached"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "Router Memory Free"
   state_topic: "collectd/router/memory/memory-free"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 
 # Disk
 - platform: mqtt
@@ -39,13 +43,15 @@
   state_topic: "collectd/router/df-root/df_complex-free"
   unit_of_measurement: "MB"
   icon: "mdi:harddisk"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(2) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(2) }}
 - platform: mqtt
   name: "Router Disk Used"
   state_topic: "collectd/router/df-root/df_complex-used"
   unit_of_measurement: "MB"
   icon: "mdi:harddisk"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(2) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(2) }}
 
 # Network (WAN, eth1.2)
 - platform: mqtt
@@ -59,7 +65,8 @@
   state_topic: "collectd/router/interface-eth1.2/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:upload-network"
-  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}
 
 # Network (LAN, br-lan)
 - platform: mqtt
@@ -73,7 +80,8 @@
   state_topic: "collectd/router/interface-br-lan/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:upload-network"
-  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}
 
 # Network (IoT, br-iot)
 - platform: mqtt
@@ -87,7 +95,8 @@
   state_topic: "collectd/router/interface-br-iot/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:upload-network"
-  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}
 
 # Wireless wlan0 (The Promised Lan, 5GHz)
 - platform: mqtt
@@ -95,7 +104,8 @@
   state_topic: "collectd/router/iwinfo-wlan0/bitrate"
   unit_of_measurement: "Mbps"
   icon: "mdi:speedometer"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "Router wlan0 Signal Power"
   state_topic: "collectd/router/iwinfo-wlan0/signal_power"
@@ -127,7 +137,8 @@
   state_topic: "collectd/router/iwinfo-wlan1/bitrate"
   unit_of_measurement: "Mbps"
   icon: "mdi:speedometer"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "Router wlan1 Signal Power"
   state_topic: "collectd/router/iwinfo-wlan1/signal_power"
@@ -159,7 +170,8 @@
   state_topic: "collectd/router/iwinfo-wlan-iot/bitrate"
   unit_of_measurement: "Mbps"
   icon: "mdi:speedometer"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "Router wlan-iot Signal Power"
   state_topic: "collectd/router/iwinfo-wlan-iot/signal_power"
@@ -191,5 +203,8 @@
   state_topic: "collectd/router/uptime/uptime"
   unit_of_measurement: "s"
   icon: "mdi:clock-outline"
-  value_template: "{{ (as_timestamp(now()) - (value.split(':')[1][:-1] | int)) | timestamp_local }}"
+  value_template: >-
+    {{
+      (as_timestamp(now()) - (value.split(':')[1][:-1] | int)) | timestamp_local
+    }}
   device_class: timestamp

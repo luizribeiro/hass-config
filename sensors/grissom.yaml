@@ -5,7 +5,8 @@
   state_topic: "collectd/grissom/cpu/percent-idle"
   unit_of_measurement: "%"
   icon: "mdi:memory"
-  value_template: "{{ (100.0 - (value.split(':')[1][:-1] | float)) | round(1) }}"
+  value_template: >-
+    {{ (100.0 - (value.split(':')[1][:-1] | float)) | round(1) }}
 
 # Memory
 - platform: mqtt
@@ -13,25 +14,29 @@
   state_topic: "collectd/grissom/memory/memory-active"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "Grissom Memory Inactive"
   state_topic: "collectd/grissom/memory/memory-inactive"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "Grissom Memory Wired"
   state_topic: "collectd/grissom/memory/memory-wired"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 - platform: mqtt
   name: "Grissom Memory Free"
   state_topic: "collectd/grissom/memory/memory-free"
   unit_of_measurement: "MB"
   icon: "mdi:chip"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000.0) | round(1) }}
 
 # Disk
 - platform: mqtt
@@ -39,13 +44,15 @@
   state_topic: "collectd/grissom/df-root/df_complex-free"
   unit_of_measurement: "GB"
   icon: "mdi:harddisk"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000000.0) | round(2) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000000.0) | round(2) }}
 - platform: mqtt
   name: "Grissom Disk Used"
   state_topic: "collectd/grissom/df-root/df_complex-used"
   unit_of_measurement: "GB"
   icon: "mdi:harddisk"
-  value_template: "{{ ((value.split(':')[1][:-1] | float) / 1000000000.0) | round(2) }}"
+  value_template: >-
+    {{ ((value.split(':')[1][:-1] | float) / 1000000000.0) | round(2) }}
 
 # Network
 - platform: mqtt
@@ -53,13 +60,15 @@
   state_topic: "collectd/grissom/interface-en1/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:download-network"
-  value_template: "{{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[1] | float) / 1000.0) | round(1) }}
 - platform: mqtt
   name: "Grissom Egress (en1)"
   state_topic: "collectd/grissom/interface-en1/if_octets"
   unit_of_measurement: "KB/s"
   icon: "mdi:upload-network"
-  value_template: "{{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}"
+  value_template: >-
+    {{ ((value.split(':')[2][:-1] | float) / 1000.0) | round(1) }}
 
 # Uptime
 - platform: mqtt
@@ -67,7 +76,10 @@
   state_topic: "collectd/grissom/uptime/uptime"
   unit_of_measurement: "s"
   icon: "mdi:clock-outline"
-  value_template: "{{ (as_timestamp(now()) - (value.split(':')[1][:-1] | int)) | timestamp_local }}"
+  value_template: >-
+    {{
+      (as_timestamp(now()) - (value.split(':')[1][:-1] | int)) | timestamp_local
+    }}
   device_class: timestamp
 
 # Last Update
@@ -75,4 +87,8 @@
   sensors:
     grissom_seconds_since_last_update:
       unit_of_measurement: "s"
-      value_template: "{{ as_timestamp(now()) - as_timestamp(states.sensor.grissom_cpu_usage.last_updated) }}"
+      value_template: >-
+        {{
+          as_timestamp(now())
+          - as_timestamp(states.sensor.grissom_cpu_usage.last_updated)
+        }}
