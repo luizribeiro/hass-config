@@ -1,0 +1,17 @@
+---
+- alias: "Turn on guest room lights before sunset"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:30:00"
+  action:
+    - service: light.turn_on
+      entity_id: light.office_lights
+
+- alias: "Turn off guest room lights"
+  trigger:
+    platform: time
+    at: "22:30:00"
+  action:
+    - service: light.turn_off
+      entity_id: light.office_lights
