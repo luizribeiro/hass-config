@@ -89,6 +89,9 @@ google_assistant:
     light.tv_rack_lamp:
       expose: true
       room: "Living Room"
+    light.office_lights:
+      expose: true
+      room: "Guest Room"
     vacuum.xiaomi_vacuum_cleaner:
       expose: true
       name: "Alfred"
@@ -127,6 +130,7 @@ tplink:
   switch:
     - host: "iot-avocado"
     - host: "iot-bacon"
+    - host: "iot-pizza"
     - host: "iot-popcorn"
 
 homeassistant:
@@ -161,6 +165,9 @@ light:
     entities:
       - light.corner_lamp
       - light.tv_rack_lamp
+  - platform: switch
+    name: "Office Lights"
+    entity_id: switch.pizza
 
 august:
   login_method: email
