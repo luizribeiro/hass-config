@@ -129,12 +129,3 @@ cards:
         type: "custom:mini-graph-card"
     title: Network
     type: horizontal-stack
-  - entities:
-      - entity: sensor.pi_hole_dns_queries_today
-      - entity: sensor.pi_hole_dns_queries_cached
-      - entity: sensor.pi_hole_dns_queries_forwarded
-      - entity: sensor.pi_hole_ads_blocked_today
-      - entity: sensor.pi_hole_ads_percentage_blocked_today
-    show_header_toggle: false
-    title: Pi-hole
-    type: entities
