@@ -3,23 +3,23 @@ custom_header:
   compact_mode: true
 resources:
   - type: module
-    url: /community_plugin/custom-header/custom-header.js
+    url: /hacsfiles/custom-header/custom-header.js
   - type: js
-    url: /community_plugin/lovelace-valetudo-map-card/valetudo-map-card.js
+    url: /hacsfiles/lovelace-valetudo-map-card/valetudo-map-card.js
   - type: js
-    url: /community_plugin/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
+    url: /hacsfiles/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
   - type: js
-    url: /community_plugin/lovelace-swipe-navigation/swipe-navigation.js
+    url: /hacsfiles/lovelace-swipe-navigation/swipe-navigation.js
   - type: module
-    url: /community_plugin/mini-media-player/mini-media-player-bundle.js
+    url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
   - type: module
-    url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+    url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
   - type: js
-    url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
+    url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
   - type: module
-    url: /community_plugin/lovelace-state-switch/state-switch.js
+    url: /hacsfiles/lovelace-state-switch/state-switch.js
   - type: module
-    url: /community_plugin/decluttering-card/decluttering-card.js
+    url: /hacsfiles/decluttering-card/decluttering-card.js
 
 title: Home
 views: !include_dir_list lovelace/
