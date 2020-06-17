@@ -17,7 +17,7 @@
       data:
         entity_id: media_player.all_speakers
         volume_level: 0.5
-    - service: tts.google_translate_say
+    - service: tts.google_say
       data:
         entity_id: media_player.all_speakers
         message: "It's time to brush your teeth and go to bed. Sleep tight!"

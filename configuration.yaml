@@ -63,6 +63,11 @@ recorder:
 
 tts:
   - platform: google_translate
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+    base_url: https://home.thepromisedlan.club
+    service_name: google_say
 
 group: !include groups.yaml
 automation: !include_dir_merge_list automations/
