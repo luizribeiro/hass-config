@@ -43,8 +43,7 @@
         # Wake Up Gently:
         # https://open.spotify.com/playlist/37i9dQZF1DX7cZxYLqLUJl
         uri: "spotify:playlist:37i9dQZF1DX7cZxYLqLUJl"
-        transfer_playback: "no"
-        random_song: "yes"
+        random_song: true
 
 - alias: Turn off bedroom lights when no one is home
   trigger:
