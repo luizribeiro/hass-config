@@ -1,6 +1,6 @@
 ---
 - platform: rest
-  resource: http://iot-rockrobo/api/map/latest
+  resource: https://nuc.thepromisedlan.club/vacuum/api/map/latest
   name: valetudo_map
   json_attributes:
     - image
