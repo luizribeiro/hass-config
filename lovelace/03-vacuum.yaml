@@ -9,15 +9,8 @@ cards:
         entity: vacuum.xiaomi_vacuum_cleaner
         name: Xiaomi Vacuum
         type: "custom:xiaomi-vacuum-card"
-      - crop:
-          bottom: 70
-          left: 20
-          right: 20
-          top: 70
-        entity: sensor.valetudo_map
-        min_height: 250
-        rotate: 0
-        type: "custom:valetudo-map-card"
+      - type: picture
+        image: https://nuc.thepromisedlan.club/vacuum/api/simple_map
       - entities:
           - entity: vacuum.xiaomi_vacuum_cleaner
         hours_to_show: 24

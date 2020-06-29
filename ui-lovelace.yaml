@@ -5,8 +5,6 @@ resources:
   - type: module
     url: /hacsfiles/custom-header/custom-header.js
   - type: js
-    url: /hacsfiles/lovelace-valetudo-map-card/valetudo-map-card.js
-  - type: js
     url: /hacsfiles/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
   - type: js
     url: /hacsfiles/lovelace-swipe-navigation/swipe-navigation.js

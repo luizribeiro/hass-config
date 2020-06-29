@@ -58,7 +58,6 @@ logbook:
 recorder:
   exclude:
     entities:
-      - sensor.valetudo_map
       - binary_sensor.living_room_tv_status
 
 tts:
