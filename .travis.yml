@@ -10,7 +10,11 @@ before_install:
 install:
   - pip3 install homeassistant
   - pip3 install python-dateutil
+
+  # spotcast dependencies
   - pip3 install spotipy
+  - pip3 install PyChromecast
+
   - pip3 install yamllint
 script:
   - yamllint .
