@@ -16,8 +16,6 @@ resources:
     url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
   - type: module
     url: /hacsfiles/lovelace-state-switch/state-switch.js
-  - type: module
-    url: /hacsfiles/decluttering-card/decluttering-card.js
 
 title: Home
 views: !include_dir_list lovelace/
