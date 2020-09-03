@@ -125,6 +125,16 @@ google_assistant:
         - "Soundbar"
       room: "Living Room"
 
+homekit:
+  filter:
+    include_domains:
+      - climate
+      - light
+      - lock
+      - media_player
+    exclude_entities:
+      - light.entertainment_area_1
+
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
