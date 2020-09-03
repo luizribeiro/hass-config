@@ -131,7 +131,6 @@ homekit:
       - climate
       - light
       - lock
-      - media_player
     exclude_entities:
       - light.entertainment_area_1
 
