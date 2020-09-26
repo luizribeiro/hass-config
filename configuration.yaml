@@ -248,8 +248,6 @@ switch:
           data:
             mac: !secret grissom_mac
   - platform: broadlink
-    type: rm2_pro_plus
-    host: "iot-rmpro"
     mac: !secret broadlink_mac
     switches:
       zvox_volume_up:
