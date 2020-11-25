@@ -175,7 +175,7 @@ light:
     name: "Corner Lamp"
     entity_id: switch.popcorn
   - platform: switch
-    name: "TV Rack Lamp"
+    name: "TV Rack Lamps"
     entity_id: switch.avocado
   - platform: group
     name: Living Room
