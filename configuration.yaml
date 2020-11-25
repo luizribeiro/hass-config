@@ -90,9 +90,13 @@ google_assistant:
     light.corner_lamp:
       expose: true
       room: "Living Room"
-    light.tv_rack_lamp:
+    light.tv_rack_lamps:
       expose: true
       room: "Living Room"
+      aliases:
+        - "TV Lamp"
+        - "TV Rack Lamp"
+        - "TV Rack Lamps"
     light.office_lights:
       expose: true
       room: "Guest Room"
@@ -177,7 +181,7 @@ light:
     name: Living Room
     entities:
       - light.corner_lamp
-      - light.tv_rack_lamp
+      - light.tv_rack_lamps
   - platform: switch
     name: "Office Lights"
     entity_id: switch.pizza
