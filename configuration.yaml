@@ -170,13 +170,13 @@ homeassistant:
 light:
   - platform: switch
     name: "Desk Lamp"
-    entity_id: switch.bacon
+    entity_id: switch.avocado
   - platform: switch
     name: "Corner Lamp"
     entity_id: switch.popcorn
   - platform: switch
     name: "TV Rack Lamps"
-    entity_id: switch.avocado
+    entity_id: switch.bacon
   - platform: group
     name: Living Room
     entities:
