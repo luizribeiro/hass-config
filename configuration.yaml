@@ -84,14 +84,6 @@ google_assistant:
   report_state: true
   expose_by_default: false
   entity_config:
-    # old entities
-    light.desk_lamp:
-      expose: true
-      room: "Living Room"
-    light.corner_lamp:
-      expose: true
-      room: "Living Room"
-
     # living room
     light.tv_rack_lamps:
       expose: true
@@ -138,8 +130,12 @@ google_assistant:
       room: "Office"
 
     # guest room
-    light.office_lights:
+    light.guest_room_lamp:
       expose: true
+      aliases:
+        - "Guest Room Lamp"
+        - "Guest Lamp"
+        - "Lamp"
       room: "Guest Room"
 
 homekit:
@@ -182,22 +178,19 @@ homeassistant:
 
 light:
   - platform: switch
-    name: "Desk Lamp"
+    name: "Guest Room Lamp"
     entity_id: switch.avocado
-  - platform: switch
-    name: "Corner Lamp"
-    entity_id: switch.popcorn
   - platform: switch
     name: "TV Rack Lamps"
     entity_id: switch.bacon
   - platform: group
     name: Living Room
     entities:
-      - light.corner_lamp
       - light.tv_rack_lamps
-  - platform: switch
-    name: "Office Lights"
-    entity_id: switch.pizza
+  - platform: group
+    name: Guest Room
+    entities:
+      - light.guest_room_lamp
 
 august:
   login_method: email
