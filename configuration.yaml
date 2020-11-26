@@ -119,7 +119,7 @@ google_assistant:
       aliases:
         - "Hackintosh"
         - "Grissom"
-      room: "Living Room"
+      room: "Office"
     switch.zvox_power:
       expose: true
       name: "ZVOX"
