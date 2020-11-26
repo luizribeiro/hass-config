@@ -128,6 +128,12 @@ google_assistant:
         - "ZVOX Speaker"
         - "Soundbar"
       room: "Living Room"
+    light.workbench:
+      expose: true
+      room: "Office"
+    light.desk:
+      expose: true
+      room: "Office"
 
 homekit:
   filter:

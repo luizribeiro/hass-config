@@ -15,6 +15,7 @@ cards:
     type: entities
   - entities:
       - entity: light.living_room
+      - entity: light.office
       - entity: light.bedroom
     title: Lights
     type: entities
