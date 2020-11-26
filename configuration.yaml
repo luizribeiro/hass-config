@@ -84,12 +84,15 @@ google_assistant:
   report_state: true
   expose_by_default: false
   entity_config:
+    # old entities
     light.desk_lamp:
       expose: true
       room: "Living Room"
     light.corner_lamp:
       expose: true
       room: "Living Room"
+
+    # living room
     light.tv_rack_lamps:
       expose: true
       room: "Living Room"
@@ -97,9 +100,6 @@ google_assistant:
         - "TV Lamp"
         - "TV Rack Lamp"
         - "TV Rack Lamps"
-    light.office_lights:
-      expose: true
-      room: "Guest Room"
     vacuum.xiaomi_vacuum_cleaner:
       expose: true
       name: "Alfred"
@@ -113,13 +113,6 @@ google_assistant:
       aliases:
         - "PS4"
       room: "Living Room"
-    switch.grissom:
-      expose: true
-      name: "Hackintosh"
-      aliases:
-        - "Hackintosh"
-        - "Grissom"
-      room: "Office"
     switch.zvox_power:
       expose: true
       name: "ZVOX"
@@ -128,12 +121,26 @@ google_assistant:
         - "ZVOX Speaker"
         - "Soundbar"
       room: "Living Room"
+
+    # office
     light.workbench:
       expose: true
       room: "Office"
     light.desk:
       expose: true
       room: "Office"
+    switch.grissom:
+      expose: true
+      name: "Hackintosh"
+      aliases:
+        - "Hackintosh"
+        - "Grissom"
+      room: "Office"
+
+    # guest room
+    light.office_lights:
+      expose: true
+      room: "Guest Room"
 
 homekit:
   filter:
