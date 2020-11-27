@@ -130,7 +130,7 @@ google_assistant:
     scene.relax:
       expose: true
       room: "Bedroom"
-    scene.night:
+    scene.night_time:
       expose: true
       room: "Bedroom"
 

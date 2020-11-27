@@ -59,7 +59,7 @@
         - 0.503
         - 0.413
 - id: "1575775197784"
-  name: Night
+  name: Night Time
   entities:
     light.left_bedroom_lamp:
       brightness: 1
