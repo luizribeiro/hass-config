@@ -117,3 +117,38 @@
       xy_color:
         - 0.561
         - 0.404
+- id: "1283784712325"
+  name: Reading Light
+  entities:
+    light.left_bedroom_lamp:
+      state: "off"
+    light.right_bedroom_lamp:
+      state: "off"
+    light.left_nightstand:
+      state: "on"
+      brightness: 141
+      hs_color:
+        - 32.1
+        - 78.431
+      rgb_color:
+        - 255
+        - 162
+        - 55
+      xy_color:
+        - 0.551
+        - 0.4
+      effect: none
+    light.right_nightstand:
+      state: "on"
+      brightness: 141
+      hs_color:
+        - 32.1
+        - 78.431
+      rgb_color:
+        - 255
+        - 162
+        - 55
+      xy_color:
+        - 0.551
+        - 0.4
+      effect: none

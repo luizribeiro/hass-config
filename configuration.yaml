@@ -133,6 +133,9 @@ google_assistant:
     scene.night_time:
       expose: true
       room: "Bedroom"
+    scene.reading_light:
+      expose: true
+      room: "Bedroom"
 
     # office
     light.workbench:

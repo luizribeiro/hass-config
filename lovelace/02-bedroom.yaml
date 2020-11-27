@@ -23,6 +23,8 @@ cards:
         icon: "mdi:palm-tree"
       - entity: scene.night_time
         icon: "mdi:weather-night"
+      - entity: scene.reading_light
+        icon: "mdi:book-open-blank-variant"
     show_header_toggle: false
     title: Scenes
     type: entities
