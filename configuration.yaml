@@ -114,6 +114,26 @@ google_assistant:
         - "Soundbar"
       room: "Living Room"
 
+    # bedroom
+    light.left_nightstand:
+      expose: true
+      room: "Bedroom"
+    light.right_nightstand:
+      expose: true
+      room: "Bedroom"
+    light.left_bedroom_lamp:
+      expose: true
+      room: "Bedroom"
+    light.right_bedroom_lamp:
+      expose: true
+      room: "Bedroom"
+    scene.relax:
+      expose: true
+      room: "Bedroom"
+    scene.night:
+      expose: true
+      room: "Bedroom"
+
     # office
     light.workbench:
       expose: true
