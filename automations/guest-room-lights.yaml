@@ -6,7 +6,7 @@
     offset: "-00:30:00"
   action:
     - service: light.turn_on
-      entity_id: light.guest_room_lamp
+      entity_id: light.guest_room_nightstand
 
 - alias: "Turn off guest room lights"
   trigger:
@@ -14,4 +14,4 @@
     at: "22:30:00"
   action:
     - service: light.turn_off
-      entity_id: light.guest_room_lamp
+      entity_id: light.guest_room_nightstand

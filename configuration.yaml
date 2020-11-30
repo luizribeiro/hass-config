@@ -153,12 +153,11 @@ google_assistant:
       room: "Office"
 
     # guest room
-    light.guest_room_lamp:
+    light.guest_room_nightstand:
       expose: true
       aliases:
-        - "Guest Room Lamp"
-        - "Guest Lamp"
-        - "Lamp"
+        - "Guest Room Nightstand"
+        - "Guest Nightstand"
       room: "Guest Room"
 
 homekit:
@@ -201,7 +200,7 @@ homeassistant:
 
 light:
   - platform: switch
-    name: "Guest Room Lamp"
+    name: "Guest Room Nightstand"
     entity_id: switch.avocado
   - platform: switch
     name: "TV Rack Lamps"
@@ -213,7 +212,7 @@ light:
   - platform: group
     name: Guest Room
     entities:
-      - light.guest_room_lamp
+      - light.guest_room_nightstand
   - platform: decora_wifi
     username: !secret leviton_username
     password: !secret leviton_password
