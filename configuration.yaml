@@ -159,6 +159,12 @@ google_assistant:
         - "Guest Room Nightstand"
         - "Guest Nightstand"
       room: "Guest Room"
+    light.soup:
+      expose: true
+      aliases:
+        - "Guest Room Lamp"
+        - "Guest Lamp"
+      room: "Guest Room"
 
 homekit:
   filter:
@@ -195,6 +201,8 @@ homeassistant:
       hidden: true
     switch.012002845ccf7f596568:
       hidden: true
+    light.soup:
+      friendly_name: "Guest Room Lamp"
 
 light:
   - platform: switch
@@ -211,6 +219,7 @@ light:
     name: Guest Room
     entities:
       - light.guest_room_nightstand
+      - light.soup
   - platform: decora_wifi
     username: !secret leviton_username
     password: !secret leviton_password
