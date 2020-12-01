@@ -13,9 +13,7 @@ cards:
     title: Devices
     type: entities
   - entities:
-      - entity: light.corner_lamp
       - entity: light.tv_rack_lamps
-      - entity: light.desk_lamp
     show_header_toggle: true
     title: Lights
     type: entities

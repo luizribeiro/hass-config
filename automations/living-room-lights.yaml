@@ -6,8 +6,6 @@
     offset: "-00:30:00"
   action:
     - service: light.turn_on
-      entity_id: light.corner_lamp
-    - service: light.turn_on
       entity_id: light.tv_rack_lamps
 
 - alias: "Turn off Living Room lights"
