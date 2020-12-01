@@ -21,7 +21,7 @@ cards:
   - entities:
       - entity: scene.relax
         icon: "mdi:palm-tree"
-      - entity: scene.night_time
+      - entity: scene.night
         icon: "mdi:weather-night"
       - entity: scene.reading_light
         icon: "mdi:book-open-blank-variant"

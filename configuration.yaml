@@ -130,9 +130,13 @@ google_assistant:
     scene.relax:
       expose: true
       room: "Bedroom"
-    scene.night_time:
+    scene.night:
       expose: true
       room: "Bedroom"
+      aliases:
+        - "Night"
+        - "Night Time"
+        - "Night Light"
     scene.reading_light:
       expose: true
       room: "Bedroom"
