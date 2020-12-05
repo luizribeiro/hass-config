@@ -320,6 +320,9 @@ switch:
           ISNxEUERMSExE2EjYSNhM2EhIROBE3ETcREhITEgAFGwABH0oSAAwzAAEfShEADQU="
         command_off: "JgBYAAABKpIVEBUQFjQVEBYQFRAVEBYPFjQVNRUQFjQVNRQ1FTUVNRUQF\
           RAWEBU0FhAVEBUQFRAWNBU1FTQVERU0FTUWNBU1FQAFMgABK0cVAAxOAAErRxUADQU="
+  - platform: flux
+    lights:
+      - light.office
 
 webostv:
   name: "webOS Living Room TV"
