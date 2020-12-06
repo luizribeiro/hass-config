@@ -233,6 +233,14 @@ august:
   username: !secret august_username
   password: !secret august_password
 
+cover:
+  platform: opengarage
+  covers:
+    garage:
+      name: Garage
+      host: iot-opengarage
+      device_key: !secret opengarage_device_key
+
 vacuum:
   - platform: xiaomi_miio
     host: "iot-rockrobo"
