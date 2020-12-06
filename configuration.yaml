@@ -322,7 +322,9 @@ switch:
           RAWEBU0FhAVEBUQFRAWNBU1FTQVERU0FTUWNBU1FQAFMgABK0cVAAxOAAErRxUADQU="
   - platform: flux
     lights:
-      - light.office
+      - light.desk
+      - light.workbench
+    mode: mired
 
 webostv:
   name: "webOS Living Room TV"
