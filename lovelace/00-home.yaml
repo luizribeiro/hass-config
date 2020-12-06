@@ -10,6 +10,7 @@ cards:
   - entities:
       - entity: lock.front_door
       - entity: binary_sensor.front_door_open
+      - entity: cover.garage
       - entity: vacuum.xiaomi_vacuum_cleaner
     show_header_toggle: false
     type: entities
