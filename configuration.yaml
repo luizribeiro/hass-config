@@ -296,26 +296,21 @@ switch:
   - platform: broadlink
     mac: !secret broadlink_mac
     switches:
-      zvox_volume_up:
-        friendly_name: "ZVOX Volume Up"
+      - name: "ZVOX Volume Up"
         command_off: "JgBIAAABKJQTExITEhMSFBEUEhMSExIUEjcSFBM2EhQSNxI4EjgSNxIUE\
           jcSOBIUETgSFBEUEhMSOBITEhMSOBITEjgSOBI3EgANBQ=="
-      zvox_volume_down:
-        friendly_name: "ZVOX Volume Down"
+      - name: "ZVOX Volume Down"
         command_off: "JgBIAAABKJQTEhIUExISExIUExITEhMSEzcSExM3ExISOBQ2EzYTNxIUE\
           jcUEhITExMSEhMTEhMTNxITEzcSNxM3FDYTNhM3EgANBQ===="
-      zvox_mute:
-        friendly_name: "ZVOX Mute"
+      - name: "ZVOX Mute"
         command_off: "JgBQAAABJpMSExISExISExMRFBESExMRFDYTEhM3EhITNxM2EjcUNhM3E\
           hMSEhM3EzYSExMRFBETEhM3EjcTEhITEzYSNxQ2EwAFZgABJ0kSAA0FAAAAAAAAAAA="
-      zvox_power:
-        friendly_name: "ZVOX Power"
+      - name: "ZVOX Power"
         command_on: "JgBQAAABKJMSEhISEhISEhISEhISEhISEjcSEhI3EhISNxI3EjcSNxI3Ej\
           cSEhI3EhISNxI3EjcSEhISEjcSEhI3EhISEhISEgAFZAABKEoSAAxWDQUAAAAAAAA="
         command_off: "JgBQAAABKJMSEhISEhISEhISEhISEhISEjcSEhI3EhISNxI3EjcSNxI3E\
           jcSEhI3EjcSEhISEhISEhISEjcSEhISEjcSNxI3EgAFZAABKEoSAAxWDQUAAAAAAAA="
-      ir_living_room_tv:
-        friendly_name: "Living Room TV"
+      - name: "IR Living Room TV"
         command_on: "JgBYAAABIJISExETETcSEhISEhQQFBETETcROBESEjcRNhM1EjcTNRMTER\
           ISNxEUERMSExE2EjYSNhM2EhIROBE3ETcREhITEgAFGwABH0oSAAwzAAEfShEADQU="
         command_off: "JgBYAAABKpIVEBUQFjQVEBYQFRAVEBYPFjQVNRUQFjQVNRQ1FTUVNRUQF\
