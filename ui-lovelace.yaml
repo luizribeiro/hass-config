@@ -2,8 +2,6 @@
 custom_header:
   compact_mode: true
 resources:
-  - type: module
-    url: /hacsfiles/custom-header/custom-header.js
   - type: js
     url: /hacsfiles/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
   - type: js
