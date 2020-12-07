@@ -362,7 +362,7 @@ binary_sensor:
   - platform: ping
     name: living_room_tv_status
     host: "living-room-tv"
-    scan_interval: 1
+    scan_interval: 2
     count: 1
   - platform: template
     sensors:
