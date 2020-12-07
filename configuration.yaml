@@ -336,7 +336,7 @@ switch:
     lights:
       - light.desk
       - light.workbench
-    mode: mired
+    mode: rgb
 
 webostv:
   name: "webOS Living Room TV"
