@@ -85,6 +85,9 @@ google_assistant:
   expose_by_default: false
   entity_config:
     # living room
+    lock.front_door:
+      expose: true
+      room: "Living Room"
     light.tv_rack_lamps:
       expose: true
       room: "Living Room"
