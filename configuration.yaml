@@ -170,10 +170,19 @@ google_assistant:
         - "Guest Lamp"
       room: "Guest Room"
 
+    # garage
+    cover.garage:
+      expose: true
+      room: "Garage"
+      aliases:
+        - "Garage"
+        - "Garage Door"
+
 homekit:
   filter:
     include_domains:
       - climate
+      - cover
       - light
       - lock
     exclude_entities:
