@@ -30,6 +30,10 @@ influxdb:
       - sensor.entryway_thermostat_temperature
       - sensor.outside_humidity
       - sensor.outside_temperature
+      - sensor.office_gas_resistance
+      - sensor.office_humidity
+      - sensor.office_pressure
+      - sensor.office_temperature
 
 frontend:
   themes: !include_dir_merge_named themes
