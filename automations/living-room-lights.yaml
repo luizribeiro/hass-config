@@ -13,7 +13,7 @@
 - alias: "Turn off Christmas Tree"
   trigger:
     platform: time
-    at: "02:00:00"
+    at: "01:00:00"
   action:
     - service: light.turn_off
       entity_id: light.christmas_tree
@@ -28,4 +28,4 @@
     state: "on"
   action:
     - service: light.turn_off
-      entity_id: light.living_room
+      entity_id: light.tv_rack_lamps
