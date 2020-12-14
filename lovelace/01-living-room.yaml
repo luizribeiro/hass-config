@@ -14,6 +14,7 @@ cards:
     type: entities
   - entities:
       - entity: light.tv_rack_lamps
+      - entity: light.christmas_tree
     show_header_toggle: true
     title: Lights
     type: entities

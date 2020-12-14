@@ -95,6 +95,13 @@ google_assistant:
         - "TV Lamp"
         - "TV Rack Lamp"
         - "TV Rack Lamps"
+    light.christmas_tree:
+      expose: true
+      room: "Living Room"
+      aliases:
+        - "Christmas Tree Lights"
+        - "Christmas Tree"
+        - "Tree"
     vacuum.xiaomi_vacuum_cleaner:
       expose: true
       name: "Alfred"
@@ -203,6 +210,7 @@ tplink:
   switch:
     - host: "iot-avocado"
     - host: "iot-bacon"
+    - host: "iot-pizza"
 
 homeassistant:
   auth_providers:
@@ -230,9 +238,13 @@ light:
   - platform: switch
     name: "TV Rack Lamps"
     entity_id: switch.bacon
+  - platform: switch
+    name: "Christmas Tree"
+    entity_id: switch.pizza
   - platform: group
     name: Living Room
     entities:
+      - light.christmas_tree
       - light.tv_rack_lamps
   - platform: group
     name: Guest Room
