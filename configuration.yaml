@@ -93,13 +93,14 @@ google_assistant:
     lock.front_door:
       expose: true
       room: "Living Room"
-    light.tv_rack_lamps:
+    light.rack_lamps:
       expose: true
       room: "Living Room"
       aliases:
-        - "TV Lamp"
-        - "TV Rack Lamp"
-        - "TV Rack Lamps"
+        - "Lamp"
+        - "Lamps"
+        - "Rack Lamp"
+        - "Rack Lamps"
     light.christmas_tree:
       expose: true
       room: "Living Room"
@@ -241,7 +242,7 @@ light:
     name: "Guest Room Nightstand"
     entity_id: switch.avocado
   - platform: switch
-    name: "TV Rack Lamps"
+    name: "Rack Lamps"
     entity_id: switch.bacon
   - platform: switch
     name: "Christmas Tree"
@@ -250,7 +251,7 @@ light:
     name: Living Room
     entities:
       - light.christmas_tree
-      - light.tv_rack_lamps
+      - light.rack_lamps
   - platform: group
     name: Guest Room
     entities:

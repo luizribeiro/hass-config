@@ -6,7 +6,7 @@
     offset: "-00:30:00"
   action:
     - service: light.turn_on
-      entity_id: light.tv_rack_lamps
+      entity_id: light.rack_lamps
     - service: light.turn_on
       entity_id: light.christmas_tree
 
@@ -28,4 +28,4 @@
     state: "on"
   action:
     - service: light.turn_off
-      entity_id: light.tv_rack_lamps
+      entity_id: light.rack_lamps
