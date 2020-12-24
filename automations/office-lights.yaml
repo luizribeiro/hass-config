@@ -1,0 +1,9 @@
+---
+- alias: Enable Flux on Home Assistant start
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.flux
