@@ -8,10 +8,10 @@
     service: switch.turn_on
     entity_id: switch.zvox_power
 
-- alias: Turn on ZVOX when PS4 turns on
+- alias: Turn on ZVOX when PS5 turns on
   trigger:
     platform: state
-    entity_id: switch.playstation_4
+    entity_id: sensor.playstation_5
     to: "on"
   action:
     service: switch.turn_on
@@ -26,11 +26,11 @@
     service: switch.turn_on
     entity_id: switch.zvox_power
 
-- alias: Switch to Chromecast when PS4 turns off
+- alias: Switch to Chromecast when PS5 turns off
   trigger:
     platform: state
-    entity_id: switch.playstation_4
-    to: "off"
+    entity_id: sensor.playstation_5
+    to: "standby"
   action:
     service: media_player.select_source
     data:

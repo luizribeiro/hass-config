@@ -7,7 +7,7 @@ cards:
   - entities:
       - entity: switch.living_room_tv
         icon: "mdi:television"
-      - entity: switch.playstation_4
+      - entity: sensor.playstation_5
         icon: "mdi:playstation"
     show_header_toggle: true
     title: Devices
@@ -73,9 +73,4 @@ cards:
   - artwork: cover
     entity: media_player.chromecastultra4889
     name: Chromecast
-    type: "custom:mini-media-player"
-  - entity: media_player.playstation_4
-    hide:
-      controls: true
-      volume: true
     type: "custom:mini-media-player"

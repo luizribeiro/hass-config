@@ -115,12 +115,6 @@ google_assistant:
         - "Vacuum"
         - "Vacuum Cleaner"
       room: "Living Room"
-    switch.playstation_4:
-      expose: true
-      name: "PlayStation 4"
-      aliases:
-        - "PS4"
-      room: "Living Room"
     switch.zvox_power:
       expose: true
       name: "ZVOX"
@@ -293,21 +287,6 @@ switch:
         turn_off:
           service: switch.turn_off
           entity_id: switch.ir_living_room_tv
-      playstation_4:
-        friendly_name: "PlayStation 4"
-        availability_template: >-
-          {{ not is_state('media_player.playstation_4', 'unknown') }}
-        value_template: >-
-          {{ not is_state('media_player.playstation_4', 'standby') }}
-        icon_template: "mdi:playstation"
-        turn_on:
-          service: media_player.turn_on
-          data:
-            entity_id: media_player.playstation_4
-        turn_off:
-          service: media_player.turn_off
-          data:
-            entity_id: media_player.playstation_4
       bedroom_tv:
         friendly_name: "Bedroom TV"
         value_template: "{{ not is_state('media_player.bedroom_tv', 'off') }}"
@@ -375,7 +354,7 @@ webostv:
       - Spotify
       - Netflix
       - Hulu
-      - PlayStation 4
+      - PlayStation 5
       - Nintendo Switch
       - YouTube
       - Optimum

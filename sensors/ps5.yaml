@@ -1,0 +1,26 @@
+---
+- platform: command_line
+  name: PlayStation 5
+  command: /var/lib/hass/bin/ps5-wake -vP -H ps5 -j -v
+  json_attributes:
+    [
+      "code",
+      "host_id",
+      "host_name",
+      "host_type",
+      "running_app_name",
+      "running_app_titleid",
+      "version",
+      "host_request_port",
+      "timestamp",
+      "fingerprint",
+    ]
+  value_template: >
+    {% if value_json.code == '200' | int %}
+      on
+    {% elif value_json.code == '620' | int %}
+      standby
+    {% else %}
+      off
+    {% endif %}
+  scan_interval: 2
