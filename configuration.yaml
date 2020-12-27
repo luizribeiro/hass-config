@@ -369,6 +369,8 @@ binary_sensor:
       grissom_status:
         value_template: >-
           {{ (states('sensor.grissom_seconds_since_last_update') | int) < 60 }}
+      is_freezing:
+        value_template: "{{ (states('sensor.outside_temperature') | int) < 0 }}"
   - platform: workday
     name: workday_today
     country: US

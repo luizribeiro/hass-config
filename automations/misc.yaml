@@ -1,0 +1,18 @@
+---
+- alias: Remind to open faucets when too cold
+  trigger:
+    platform: time
+    at: "8:00:00"
+  condition:
+    - condition: state
+      entity_id: binary_sensor.is_freezing
+      state: "on"
+      for:
+        hours: 24
+  action:
+    - service: notify.facebook
+      data:
+        message: >-
+          The outside temperature has been freezing for the past 24 hours. Can
+          you open the faucets today?
+        target: !secret phone_numbers
