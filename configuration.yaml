@@ -342,6 +342,7 @@ switch:
       - light.desk
       - light.workbench
     mode: mired
+    disable_brightness_adjust: true
 
 webostv:
   name: "webOS Living Room TV"
