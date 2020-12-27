@@ -353,13 +353,8 @@ webostv:
   customize:
     sources:
       - Chromecast
-      - Spotify
-      - Netflix
-      - Hulu
       - PlayStation 5
       - Nintendo Switch
-      - YouTube
-      - Optimum
 
 sensor: !include_dir_merge_list sensors/
 
