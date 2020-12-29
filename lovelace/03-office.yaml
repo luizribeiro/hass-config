@@ -1,0 +1,22 @@
+---
+title: Office
+path: office
+icon: "mdi:briefcase"
+panel: false
+badges: []
+cards:
+  - entities:
+      - entity: light.office
+      - entity: light.desk
+        icon: "mdi:led-strip"
+      - entity: light.workbench
+        icon: "mdi:led-strip"
+      - entity: switch.flux
+        icon: "mdi:weather-sunset"
+    show_header_toggle: false
+    title: Lights
+    type: entities
+  - entities:
+      - entity: switch.grissom
+    title: Devices
+    type: entities
