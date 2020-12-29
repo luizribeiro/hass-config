@@ -11,6 +11,8 @@ cards:
         icon: "mdi:led-strip"
       - entity: light.workbench
         icon: "mdi:led-strip"
+      - entity: light.office_lamp
+        icon: "mdi:desk-lamp"
       - entity: switch.flux
         icon: "mdi:weather-sunset"
     show_header_toggle: false

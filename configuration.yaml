@@ -160,6 +160,12 @@ google_assistant:
     light.desk:
       expose: true
       room: "Office"
+    light.office_lamp:
+      expose: true
+      aliases:
+        - "Office Lamp"
+        - "Lamp"
+      room: "Office"
     switch.grissom:
       expose: true
       name: "Hackintosh"
@@ -213,6 +219,7 @@ tplink:
     - host: "iot-avocado"
     - host: "iot-bacon"
     - host: "iot-pizza"
+    - host: "iot-popcorn"
 
 homeassistant:
   auth_providers:
@@ -248,6 +255,9 @@ light:
     entities:
       - light.christmas_tree
       - light.rack_lamps
+  - platform: switch
+    name: "Office Lamp"
+    entity_id: switch.popcorn
   - platform: group
     name: Guest Room
     entities:
