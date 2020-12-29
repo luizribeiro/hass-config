@@ -16,3 +16,13 @@
     - service: switch.turn_on
       data:
         entity_id: switch.flux
+
+- alias: Update Flux when its state is set to on
+  trigger:
+    platform: state
+    entity_id: switch.flux
+    to: "on"
+  action:
+    - service: switch.flux_update
+      data:
+        entity_id: switch.flux
