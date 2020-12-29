@@ -7,3 +7,12 @@
     - service: switch.turn_on
       data:
         entity_id: switch.flux
+
+- alias: Enable Flux every morning
+  trigger:
+    platform: time
+    at: "05:00:00"
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.flux
