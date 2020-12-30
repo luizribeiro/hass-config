@@ -6,7 +6,7 @@
   unit_of_measurement: "%"
   icon: "mdi:memory"
   value_template: >-
-    {{ (100.0 - (value.split(':')[1][:-1] | float)) | round(1) }}"
+    {{ (100.0 - (value.split(':')[1][:-1] | float)) | round(1) }}
 - platform: mqtt
   name: "NUC CPU Temperature"
   state_topic: "collectd/nuc/sensors-coretemp-isa-0000/temperature-temp1"
