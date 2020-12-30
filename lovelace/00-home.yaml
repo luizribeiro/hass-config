@@ -19,16 +19,31 @@ cards:
     type: entities
   - entities:
       - entity: light.living_room
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/living-room
       - entity: light.office
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/office
       - entity: light.bedroom
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/bedroom
       - entity: light.guest_room
     title: Lights
     type: entities
   - entities:
       - entity: group.living_room_devices
         icon: "mdi:power-plug"
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/living-room
       - entity: group.bedroom_devices
         icon: "mdi:power-plug"
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/bedroom
     title: Devices
     type: entities
   - entities:
