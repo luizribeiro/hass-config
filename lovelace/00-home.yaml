@@ -12,6 +12,9 @@ cards:
       - entity: binary_sensor.front_door_open
       - entity: cover.garage
       - entity: vacuum.xiaomi_vacuum_cleaner
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/vacuum
     show_header_toggle: false
     type: entities
   - entities:

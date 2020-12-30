@@ -2,6 +2,7 @@
 title: Vacuum
 path: vacuum
 icon: "mdi:robot-vacuum-variant"
+visible: false
 badges: []
 cards:
   - cards:
