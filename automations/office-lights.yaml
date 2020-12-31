@@ -26,3 +26,12 @@
     - service: switch.flux_update
       data:
         entity_id: switch.flux
+
+- alias: Update Flux every hour
+  trigger:
+    platform: time_pattern
+    minutes: 0
+  action:
+    - service: switch.flux_update
+      data:
+        entity_id: switch.flux
