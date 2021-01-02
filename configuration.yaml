@@ -186,6 +186,12 @@ google_assistant:
         - "Hackintosh"
         - "Grissom"
       room: "Office"
+    cover.office_blinds:
+      expose: true
+      room: "Office"
+      aliases:
+        - "Office Blinds"
+        - "Blinds"
 
     # guest room
     light.guest_room_nightstand:
