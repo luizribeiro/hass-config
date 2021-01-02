@@ -35,3 +35,19 @@
     - service: switch.flux_update
       data:
         entity_id: switch.flux
+
+- alias: "Open office blinds at sunrise"
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    - service: cover.open_cover
+      entity_id: covers.office_blinds
+
+- alias: "Close office blinds at sunset"
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    - service: cover.close_cover
+      entity_id: covers.office_blinds
