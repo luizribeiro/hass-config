@@ -19,6 +19,7 @@ cards:
     title: Lights
     type: entities
   - entities:
+      - entity: cover.office_blinds
       - entity: switch.grissom
     title: Devices
     type: entities
