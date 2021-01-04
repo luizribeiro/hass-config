@@ -42,7 +42,7 @@
     event: sunrise
   action:
     - service: cover.open_cover
-      entity_id: covers.office_blinds
+      entity_id: cover.office_blinds
 
 - alias: "Close office blinds at sunset"
   trigger:
@@ -50,4 +50,4 @@
     event: sunset
   action:
     - service: cover.close_cover
-      entity_id: covers.office_blinds
+      entity_id: cover.office_blinds
