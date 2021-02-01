@@ -44,6 +44,14 @@
     - service: cover.open_cover
       entity_id: cover.office_blinds
 
+- alias: "Turn on office lights in the morning"
+  trigger:
+    platform: time
+    at: "08:00:00"
+  action:
+    - service: light.turn_on
+      entity_id: light.office
+
 - alias: "Close office blinds at sunset"
   trigger:
     platform: sun
