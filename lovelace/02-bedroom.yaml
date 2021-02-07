@@ -8,6 +8,7 @@ cards:
   - entities:
       - entity: switch.bedroom_tv
         icon: "mdi:television"
+      - entity: cover.bedroom_blinds
     title: Devices
     type: entities
   - entities:

@@ -192,6 +192,12 @@ google_assistant:
       aliases:
         - "Office Blinds"
         - "Blinds"
+    cover.bedroom_blinds:
+      expose: true
+      room: "Bedroom"
+      aliases:
+        - "Bedroom Blinds"
+        - "Blinds"
 
     # guest room
     light.guest_room_nightstand:
