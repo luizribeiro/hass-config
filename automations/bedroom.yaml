@@ -19,6 +19,23 @@
         profile: relax
         transition: 600
 
+- alias: "Open bedroom blinds in the morning"
+  trigger:
+    platform: time
+    at: "8:00:00"
+  action:
+    - service: cover.open_cover
+      entity_id: cover.bedroom_blinds
+
+- alias: "Close bedroom blinds at sunset"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "+00:30:00"
+  action:
+    - service: cover.close_cover
+      entity_id: cover.bedroom_blinds
+
 - alias: Wake-up routine for Spotify
   trigger:
     platform: time
