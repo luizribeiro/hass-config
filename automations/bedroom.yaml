@@ -2,7 +2,7 @@
 - alias: Wake-up routine for bedroom lights
   trigger:
     platform: time
-    at: "6:50:00"
+    at: "6:30:00"
   condition:
     condition: and
     conditions:
@@ -22,7 +22,7 @@
 - alias: "Open bedroom blinds in the morning"
   trigger:
     platform: time
-    at: "7:00:00"
+    at: "6:40:00"
   action:
     - service: cover.open_cover
       entity_id: cover.bedroom_blinds
@@ -39,7 +39,7 @@
 - alias: Wake-up routine for Spotify
   trigger:
     platform: time
-    at: "7:00:00"
+    at: "6:40:00"
   condition:
     condition: and
     conditions:
